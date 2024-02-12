@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UI;
+using UnityEngine;
 
 namespace Input
 {
@@ -11,6 +13,9 @@ namespace Input
     /// </remarks>
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField, Tooltip("Reference to the in-game menu in this scene")]
+        private InGameMenuHandler _inGameMenuHandler;
+        
         /// <summary>
         /// Moves the player character on the x and z axis.
         /// </summary>
@@ -52,6 +57,11 @@ namespace Input
         /// </remarks>
         public void OpenMenu()
         {
+            if (_inGameMenuHandler == null)
+                throw new InvalidOperationException(
+                    $"{nameof(_inGameMenuHandler)} field in {nameof(InGameMenuHandler)} component on game object {gameObject.name} was not set!");
+            
+            _inGameMenuHandler.Show();
         }
     }
 }

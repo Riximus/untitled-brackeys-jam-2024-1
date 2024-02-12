@@ -230,6 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de57d5ef1353481c88515573f03c20b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _inGameMenuHandler: {fileID: 1322369565}
 --- !u!114 &118303287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,6 +764,7 @@ GameObject:
   - component: {fileID: 1322369564}
   - component: {fileID: 1322369563}
   - component: {fileID: 1322369565}
+  - component: {fileID: 1322369566}
   m_Layer: 5
   m_Name: In-Game Menu
   m_TagString: Untagged
@@ -814,6 +816,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mainMenuSceneName: Main Menu
+--- !u!114 &1322369566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322369562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 165c1640471e1f346b05942beb2ff724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

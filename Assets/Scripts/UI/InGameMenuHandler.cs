@@ -17,15 +17,35 @@ namespace UI
         [SerializeField] private string mainMenuSceneName;
         [DisallowNull, MaybeNull] private VisualElement _menuItemContainer;
         [DisallowNull, MaybeNull] private OptionsSubMenuHandler _optionsSubMenuHandler;
+        [DisallowNull, MaybeNull] private VisualElement _root;
+        [DisallowNull, MaybeNull] private VisualElement _backgroundPanel;
         [DisallowNull, MaybeNull] private Button _inventoryButton;
         [DisallowNull, MaybeNull] private Button _optionsButton;
+        // TODO: Add close menu button.
+        //       Don't forget to "abort" any open sub menus.
         [DisallowNull, MaybeNull] private Button _quitToMainMenuButton;
         [DisallowNull, MaybeNull] private Button _quitGameButton;
         [DisallowNull, MaybeNull] private OptionsSubMenu _optionsSubMenu;
 
+        public void Show()
+        {
+            if (_backgroundPanel == null)
+                throw new InvalidOperationException($"{nameof(Show)} was called before {nameof(Awake)}!");
+            
+            _backgroundPanel.RemoveFromClassList("disabled");
+            _backgroundPanel.AddToClassList("enabled");
+        }
+
         private void Awake()
         {
             _optionsSubMenuHandler = this.RequireComponent<OptionsSubMenuHandler>();
+            var uiDocument = this.RequireComponent<UIDocument>();
+            var root = uiDocument.rootVisualElement;
+
+            _root = root
+                ?? throw new InvalidOperationException(
+                    $"{nameof(UIDocument)} component on {gameObject.name} has no root element!");
+            _backgroundPanel = root.RequireElement<VisualElement>("background-panel");
         }
 
         private void OnEnable()
@@ -35,19 +55,15 @@ namespace UI
 
             _optionsSubMenuHandler.NavigateBackRequested += OnNavigateBackRequested;
             
-            var uiDocument = this.RequireComponent<UIDocument>();
-            var root = uiDocument.rootVisualElement;
+            if (_root == null)
+                throw new InvalidOperationException($"{nameof(OnEnable)} was called before {nameof(Awake)}!");
 
-            if (root == null)
-                throw new InvalidOperationException(
-                    $"Root element of {gameObject.name}'s {nameof(UIDocument)} is null!");
-
-            _inventoryButton = root.RequireElement<Button>("inventory-button");
-            _optionsButton = root.RequireElement<Button>("options-button");
-            _quitToMainMenuButton = root.RequireElement<Button>("quit-to-main-menu-button");
-            _quitGameButton = root.RequireElement<Button>("quit-game-button");
-            _menuItemContainer = root.RequireElement<VisualElement>("menu-item-container");
-            _optionsSubMenu = root.RequireElement<OptionsSubMenu>("options-sub-menu");
+            _inventoryButton = _root.RequireElement<Button>("inventory-button");
+            _optionsButton = _root.RequireElement<Button>("options-button");
+            _quitToMainMenuButton = _root.RequireElement<Button>("quit-to-main-menu-button");
+            _quitGameButton = _root.RequireElement<Button>("quit-game-button");
+            _menuItemContainer = _root.RequireElement<VisualElement>("menu-item-container");
+            _optionsSubMenu = _root.RequireElement<OptionsSubMenu>("options-sub-menu");
             
             _inventoryButton.clicked += OnInventoryButtonClicked;
             _optionsButton.clicked += OnOptionsButtonClicked;
