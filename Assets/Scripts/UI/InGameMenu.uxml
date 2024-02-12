@@ -9,6 +9,9 @@
                 <ui:Button text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" name="options-button" />
             </ui:VisualElement>
             <ui:VisualElement class="menu-item" style="flex-grow: 1;">
+                <ui:Button text="Continue Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="continue-game-button" />
+            </ui:VisualElement>
+            <ui:VisualElement class="menu-item" style="flex-grow: 1;">
                 <ui:Button text="Quit To Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quit-to-main-menu-button" />
             </ui:VisualElement>
             <ui:VisualElement class="menu-item" style="flex-grow: 1;">

@@ -21,19 +21,24 @@ namespace UI
         [DisallowNull, MaybeNull] private VisualElement _backgroundPanel;
         [DisallowNull, MaybeNull] private Button _inventoryButton;
         [DisallowNull, MaybeNull] private Button _optionsButton;
-        // TODO: Add close menu button.
-        //       Don't forget to "abort" any open sub menus.
+        [DisallowNull, MaybeNull] private Button _continueGameButton;
         [DisallowNull, MaybeNull] private Button _quitToMainMenuButton;
         [DisallowNull, MaybeNull] private Button _quitGameButton;
         [DisallowNull, MaybeNull] private OptionsSubMenu _optionsSubMenu;
 
-        public void Show()
+        public void Toggle()
         {
             if (_backgroundPanel == null)
-                throw new InvalidOperationException($"{nameof(Show)} was called before {nameof(Awake)}!");
+                throw new InvalidOperationException($"{nameof(Toggle)} was called before {nameof(Awake)}!");
+
+            _backgroundPanel.ToggleInClassList("disabled");
+            _backgroundPanel.ToggleInClassList("enabled");
             
-            _backgroundPanel.RemoveFromClassList("disabled");
-            _backgroundPanel.AddToClassList("enabled");
+            if (_optionsSubMenuHandler != null && _backgroundPanel.ClassListContains("disabled"))
+            {
+                _optionsSubMenuHandler.Cancel();
+                OnNavigateBackRequested();
+            }
         }
 
         private void Awake()
@@ -60,6 +65,7 @@ namespace UI
 
             _inventoryButton = _root.RequireElement<Button>("inventory-button");
             _optionsButton = _root.RequireElement<Button>("options-button");
+            _continueGameButton = _root.RequireElement<Button>("continue-game-button");
             _quitToMainMenuButton = _root.RequireElement<Button>("quit-to-main-menu-button");
             _quitGameButton = _root.RequireElement<Button>("quit-game-button");
             _menuItemContainer = _root.RequireElement<VisualElement>("menu-item-container");
@@ -67,6 +73,7 @@ namespace UI
             
             _inventoryButton.clicked += OnInventoryButtonClicked;
             _optionsButton.clicked += OnOptionsButtonClicked;
+            _continueGameButton.clicked += OnContinueGameButtonClicked;
             _quitToMainMenuButton.clicked += OnQuitToMainMenuButtonClicked;
             _quitGameButton.clicked += OnQuitGameButtonClicked;
         }
@@ -92,12 +99,14 @@ namespace UI
             
             if (_inventoryButton == null
                 || _optionsButton == null
+                || _continueGameButton == null
                 || _quitToMainMenuButton == null
                 || _quitGameButton == null)
                 throw new InvalidOperationException($"{nameof(OnDisable)} was called before {nameof(OnEnable)}!");
 
             _inventoryButton.clicked -= OnInventoryButtonClicked;
             _optionsButton.clicked -= OnOptionsButtonClicked;
+            _continueGameButton.clicked -= OnContinueGameButtonClicked;
             _quitToMainMenuButton.clicked -= OnQuitToMainMenuButtonClicked;
             _quitGameButton.clicked -= OnQuitGameButtonClicked;
         }
@@ -117,6 +126,11 @@ namespace UI
             _menuItemContainer.AddToClassList("disabled");
             _optionsSubMenu.RemoveFromClassList("disabled");
             _optionsSubMenu.AddToClassList("enabled");
+        }
+
+        private void OnContinueGameButtonClicked()
+        {
+            Toggle();
         }
 
         private void OnQuitToMainMenuButtonClicked()

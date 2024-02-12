@@ -61,7 +61,7 @@ namespace Input
                 throw new InvalidOperationException(
                     $"{nameof(_inGameMenuHandler)} field in {nameof(InGameMenuHandler)} component on game object {gameObject.name} was not set!");
             
-            _inGameMenuHandler.Show();
+            _inGameMenuHandler.Toggle();
         }
     }
 }

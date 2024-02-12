@@ -24,6 +24,11 @@ namespace UI
 
         public event Action NavigateBackRequested;
 
+        public void Cancel()
+        {
+            OnDiscardChangesClicked();
+        }
+
         private void OnEnable()
         {
             var uiDocument = this.RequireComponent<UIDocument>();
