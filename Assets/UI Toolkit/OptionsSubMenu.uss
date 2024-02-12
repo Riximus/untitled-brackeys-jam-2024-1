@@ -1,0 +1,11 @@
+#content {
+    flex-grow: 1;
+}
+
+#main-button-row {
+    flex-direction: row;
+}
+
+#main-button-row Button {
+    min-width: 200px;
+}
