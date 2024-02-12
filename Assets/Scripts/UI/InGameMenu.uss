@@ -27,3 +27,11 @@
     width: 60%;
     align-self: center;
 }
+
+.enabled {
+    display: flex;
+}
+
+.disabled {
+    display: none;
+}

@@ -16,6 +16,7 @@ namespace UI
     public class OptionsSubMenuHandler : MonoBehaviour
     {
         private const string PlayerPrefMasterVolume = "Master Volume";
+        private const float DefaultMasterVolume = 0.6f;
         private Slider _masterVolume;
         private Button _saveChanges;
         private Button _discardChanges;
@@ -41,6 +42,8 @@ namespace UI
             _discardChanges.clicked += OnDiscardChangesClicked;
             _back.clicked += OnBackClicked;
             _masterVolume.RegisterValueChangedCallback(OnMasterVolumeChanged);
+            
+            OnDiscardChangesClicked();
         }
 
         private void OnDisable()
@@ -56,8 +59,7 @@ namespace UI
         private void OnMasterVolumeChanged(ChangeEvent<float> changeEvent)
         {
             // TODO: We should preview the volume change.
-            //       There's no need to reset the volume change on discard changes, because OnDiscardChangesClicked
-            //       should cause this method to be called again.
+            //       Don't forget to reset the preview when OnDiscardChangesClicked is called.
             DisplayChanged();
         }
 
@@ -74,10 +76,15 @@ namespace UI
         private void OnDiscardChangesClicked()
         {
             if (_masterVolume != null)
-                _masterVolume.value = PlayerPrefs.GetFloat(PlayerPrefMasterVolume);
+            {
+                var masterVolumeValue = PlayerPrefs.GetFloat(PlayerPrefMasterVolume, DefaultMasterVolume);
+                _masterVolume.SetValueWithoutNotify(masterVolumeValue);
+            }
             else
+            {
                 Debug.LogErrorFormat(this, "UI field {0} was null!", nameof(_masterVolume));
-            
+            }
+
             DisplayUnchanged();
         }
 
