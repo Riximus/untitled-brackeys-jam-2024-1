@@ -11,6 +11,20 @@ namespace Input
     /// </remarks>
     public class PlayerController : MonoBehaviour
     {
+        [Header("Camera Settings")]
+        public float sensX = 400.0f;
+        public float sensY = 400.0f;
+        public Transform orientation;
+        public Transform playerCamera;
+        [Range(30f, 90f)]
+        public float cameraAngle = 60f;
+        
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        
         /// <summary>
         /// Moves the player character on the x and z axis.
         /// </summary>
@@ -33,6 +47,16 @@ namespace Input
             //       That way the camera can never be upside down.
             //       Additionally, the camera should zoom into and out of the player character.
             //       Good tests are: can I look at something in the sky? can I look at something on the table?
+
+            var eulerAngles = transform.eulerAngles;
+            // Apply the rotation to the camera
+            float desiredRotationX = playerCamera.localEulerAngles.x - lookDirectionDelta.y;
+            
+            if(desiredRotationX > 180f) desiredRotationX -= 360f;
+            
+            float playerEulerX = Mathf.Clamp(desiredRotationX, -cameraAngle, cameraAngle);
+            playerCamera.localRotation = Quaternion.Euler(playerEulerX, 0f, 0f);
+            transform.rotation = Quaternion.Euler(0f, eulerAngles.y + lookDirectionDelta.x, 0f);
         }
 
         /// <summary>
@@ -52,6 +76,8 @@ namespace Input
         /// </remarks>
         public void OpenMenu()
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
