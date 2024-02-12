@@ -15,6 +15,7 @@ namespace UI
         // TODO: If there's enough time, add a custom property drawer that supports scene references
         //       https://github.com/Tymski/SceneReference/blob/master/Scripts/SceneReference.cs
         [SerializeField] private string mainMenuSceneName;
+        [SerializeField, DisallowNull, MaybeNull] private PauseManager pauseManager;
         [DisallowNull, MaybeNull] private VisualElement _menuItemContainer;
         [DisallowNull, MaybeNull] private OptionsSubMenuHandler _optionsSubMenuHandler;
         [DisallowNull, MaybeNull] private VisualElement _root;
@@ -26,19 +27,37 @@ namespace UI
         [DisallowNull, MaybeNull] private Button _quitGameButton;
         [DisallowNull, MaybeNull] private OptionsSubMenu _optionsSubMenu;
 
-        public void Toggle()
+        public void Show()
+        {
+            if (pauseManager == null)
+                throw new InvalidOperationException(
+                    $"{nameof(pauseManager)} field in {nameof(InGameMenuHandler)} component on game object {gameObject.name} was not set!");
+            if (_backgroundPanel == null)
+                throw new InvalidOperationException($"{nameof(Show)} was called before {nameof(Awake)}!");
+            
+            pauseManager.Pause();
+            _backgroundPanel.RemoveFromClassList("disabled");
+            _backgroundPanel.AddToClassList("enabled");
+        }
+
+        public void Hide()
         {
             if (_backgroundPanel == null)
-                throw new InvalidOperationException($"{nameof(Toggle)} was called before {nameof(Awake)}!");
+                throw new InvalidOperationException($"{nameof(Hide)} was called before {nameof(Awake)}!");
 
-            _backgroundPanel.ToggleInClassList("disabled");
-            _backgroundPanel.ToggleInClassList("enabled");
+            _backgroundPanel.RemoveFromClassList("enabled");
+            _backgroundPanel.AddToClassList("disabled");
             
-            if (_optionsSubMenuHandler != null && _backgroundPanel.ClassListContains("disabled"))
-            {
+            if (_optionsSubMenuHandler != null)
                 _optionsSubMenuHandler.Cancel();
-                OnNavigateBackRequested();
-            }
+
+            OnNavigateBackRequested();
+            
+            if (pauseManager == null)
+                throw new InvalidOperationException(
+                    $"{nameof(pauseManager)} field in {nameof(InGameMenuHandler)} component on game object {gameObject.name} was not set!");
+
+            pauseManager.Resume();
         }
 
         private void Awake()
@@ -130,7 +149,7 @@ namespace UI
 
         private void OnContinueGameButtonClicked()
         {
-            Toggle();
+            Hide();
         }
 
         private void OnQuitToMainMenuButtonClicked()

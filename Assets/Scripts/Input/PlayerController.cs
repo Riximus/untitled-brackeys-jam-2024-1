@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics.CodeAnalysis;
 using UI;
 using UnityEngine;
+using Util;
 
 namespace Input
 {
@@ -14,7 +16,9 @@ namespace Input
     public class PlayerController : MonoBehaviour
     {
         [SerializeField, Tooltip("Reference to the in-game menu in this scene")]
-        private InGameMenuHandler _inGameMenuHandler;
+        private InGameMenuHandler inGameMenuHandler;
+        [SerializeField, DisallowNull, MaybeNull]
+        private PauseManager pauseManager;
         
         /// <summary>
         /// Moves the player character on the x and z axis.
@@ -57,11 +61,17 @@ namespace Input
         /// </remarks>
         public void OpenMenu()
         {
-            if (_inGameMenuHandler == null)
+            if (inGameMenuHandler == null)
                 throw new InvalidOperationException(
-                    $"{nameof(_inGameMenuHandler)} field in {nameof(InGameMenuHandler)} component on game object {gameObject.name} was not set!");
-            
-            _inGameMenuHandler.Toggle();
+                    $"{nameof(inGameMenuHandler)} field in {nameof(PlayerController)} component on game object {gameObject.name} was not set!");
+            if (pauseManager == null)
+                throw new InvalidOperationException(
+                    $"{nameof(pauseManager)} field in {nameof(PlayerController)} component on game object {gameObject.name} was not set!");
+
+            if (pauseManager.IsPaused)
+                inGameMenuHandler.Hide();
+            else
+                inGameMenuHandler.Show();
         }
     }
 }
