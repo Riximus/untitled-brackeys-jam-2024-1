@@ -18,6 +18,7 @@ namespace UI
         [SerializeField, DisallowNull, MaybeNull] private PauseManager pauseManager;
         [DisallowNull, MaybeNull] private VisualElement _menuItemContainer;
         [DisallowNull, MaybeNull] private OptionsSubMenuHandler _optionsSubMenuHandler;
+        [DisallowNull, MaybeNull] private InventorySubMenuHandler _inventorySubMenuHandler;
         [DisallowNull, MaybeNull] private VisualElement _root;
         [DisallowNull, MaybeNull] private VisualElement _backgroundPanel;
         [DisallowNull, MaybeNull] private Button _inventoryButton;
@@ -26,6 +27,7 @@ namespace UI
         [DisallowNull, MaybeNull] private Button _quitToMainMenuButton;
         [DisallowNull, MaybeNull] private Button _quitGameButton;
         [DisallowNull, MaybeNull] private OptionsSubMenu _optionsSubMenu;
+        [DisallowNull, MaybeNull] private InventorySubMenu _inventorySubMenu;
 
         public void Show()
         {
@@ -51,6 +53,9 @@ namespace UI
             if (_optionsSubMenuHandler != null)
                 _optionsSubMenuHandler.Cancel();
 
+            if (_inventorySubMenuHandler != null)
+                _inventorySubMenuHandler.Cancel();
+
             OnNavigateBackRequested();
             
             if (pauseManager == null)
@@ -63,6 +68,7 @@ namespace UI
         private void Awake()
         {
             _optionsSubMenuHandler = this.RequireComponent<OptionsSubMenuHandler>();
+            _inventorySubMenuHandler = this.RequireComponent<InventorySubMenuHandler>();
             var uiDocument = this.RequireComponent<UIDocument>();
             var root = uiDocument.rootVisualElement;
 
@@ -74,10 +80,11 @@ namespace UI
 
         private void OnEnable()
         {
-            if (_optionsSubMenuHandler == null)
+            if (_optionsSubMenuHandler == null || _inventorySubMenuHandler == null)
                 throw new InvalidOperationException($"{nameof(OnEnable)} called before {nameof(Awake)}!");
 
             _optionsSubMenuHandler.NavigateBackRequested += OnNavigateBackRequested;
+            _inventorySubMenuHandler.NavigateBackRequested += OnNavigateBackRequested;
             
             if (_root == null)
                 throw new InvalidOperationException($"{nameof(OnEnable)} was called before {nameof(Awake)}!");
@@ -89,6 +96,7 @@ namespace UI
             _quitGameButton = _root.RequireElement<Button>("quit-game-button");
             _menuItemContainer = _root.RequireElement<VisualElement>("menu-item-container");
             _optionsSubMenu = _root.RequireElement<OptionsSubMenu>("options-sub-menu");
+            _inventorySubMenu = _root.RequireElement<InventorySubMenu>("inventory-sub-menu");
             
             _inventoryButton.clicked += OnInventoryButtonClicked;
             _optionsButton.clicked += OnOptionsButtonClicked;
@@ -99,7 +107,7 @@ namespace UI
 
         private void OnNavigateBackRequested()
         {
-            if (_menuItemContainer == null || _optionsSubMenu == null)
+            if (_menuItemContainer == null || _optionsSubMenu == null || _inventorySubMenu == null)
                 throw new InvalidOperationException(
                     $"{nameof(OnNavigateBackRequested)} called before {nameof(OnEnable)}!");
             
@@ -107,14 +115,17 @@ namespace UI
             _menuItemContainer.AddToClassList("enabled");
             _optionsSubMenu.RemoveFromClassList("enabled");
             _optionsSubMenu.AddToClassList("disabled");
+            _inventorySubMenu.RemoveFromClassList("enabled");
+            _inventorySubMenu.AddToClassList("disabled");
         }
 
         private void OnDisable()
         {
-            if (_optionsSubMenuHandler == null)
+            if (_optionsSubMenuHandler == null || _inventorySubMenuHandler == null)
                 throw new InvalidOperationException($"{nameof(OnDisable)} called before {nameof(Awake)}!");
 
             _optionsSubMenuHandler.NavigateBackRequested -= OnNavigateBackRequested;
+            _inventorySubMenuHandler.NavigateBackRequested -= OnNavigateBackRequested;
             
             if (_inventoryButton == null
                 || _optionsButton == null
@@ -137,7 +148,7 @@ namespace UI
 
         private void OnOptionsButtonClicked()
         {
-            if (_menuItemContainer == null || _optionsSubMenu == null)
+            if (_menuItemContainer == null || _optionsSubMenu == null || _inventorySubMenu == null)
                 throw new InvalidOperationException(
                     $"{nameof(OnOptionsButtonClicked)} called before {nameof(OnEnable)}!");
             
@@ -145,6 +156,8 @@ namespace UI
             _menuItemContainer.AddToClassList("disabled");
             _optionsSubMenu.RemoveFromClassList("disabled");
             _optionsSubMenu.AddToClassList("enabled");
+            _inventorySubMenu.RemoveFromClassList("disabled");
+            _inventorySubMenu.AddToClassList("enabled");
         }
 
         private void OnContinueGameButtonClicked()

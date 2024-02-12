@@ -13,7 +13,7 @@ namespace UI
     /// <see cref="GameObject"/>'s <see cref="UIDocument"/> component.
     /// </remarks>
     [RequireComponent(typeof(UIDocument))]
-    public class OptionsSubMenuHandler : MonoBehaviour
+    public class OptionsSubMenuHandler : MonoBehaviour, ISubMenuHandler
     {
         private const string PlayerPrefMasterVolume = "Master Volume";
         private const float DefaultMasterVolume = 0.6f;
