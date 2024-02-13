@@ -25,9 +25,6 @@ namespace Input
         [Range(30f, 90f)]
         public float cameraAngle = 60f;
         
-        [Header("Movement Settings")]
-        public float moveSpeed;
-        
         [Header("Interaction Settings")]
         public float interactionRange;
         
@@ -36,9 +33,6 @@ namespace Input
         {
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            
-            _rigidBody = GetComponent<Rigidbody>();
-            _rigidBody.freezeRotation = true;
         }
         
         /// <summary>
@@ -51,10 +45,7 @@ namespace Input
         /// <param name="moveDirection">vector of x and z coordinates with a clamped magnitude (0..1)</param>
         public void Move(Vector2 moveDirection)
         {
-            Vector3 move = new Vector3(moveDirection.x, 0, moveDirection.y);
-            move = orientation.forward * move.z + orientation.right * move.x;
-            float forceMagnitude = moveSpeed * 10f * Time.deltaTime; // Calculate the scalar value first
-            _rigidBody.AddForce(move.normalized * forceMagnitude, ForceMode.Force);
+
         }
 
         /// <summary>
