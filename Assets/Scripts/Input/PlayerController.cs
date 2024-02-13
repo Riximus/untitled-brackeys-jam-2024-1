@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Diagnostics.CodeAnalysis;
+using UnityEngine;
+using Util;
 
 namespace Input
 {
@@ -9,8 +11,16 @@ namespace Input
     /// The action methods <see cref="Move"/>, <see cref="Look"/>, <see cref="Interact"/>, and <see cref="OpenMenu"/>
     /// will be called from <see cref="PlayerInputDelegate"/>.
     /// </remarks>
+    [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : MonoBehaviour
     {
+        [SerializeField, Tooltip("Movement speed of the player")]
+        private float moveSpeed;
+        [SerializeField, Tooltip("Maximum velocity the player can have when moving"), Min(0f)]
+        private float maxVelocity;
+        [DisallowNull, NotNull] private Rigidbody _rigidbody = default!;
+        private Vector2 _moveDirection;
+        
         /// <summary>
         /// Moves the player character on the x and z axis.
         /// </summary>
@@ -21,6 +31,18 @@ namespace Input
         /// <param name="moveDirection">vector of x and z coordinates with a clamped magnitude (0..1)</param>
         public void Move(Vector2 moveDirection)
         {
+            _moveDirection = moveDirection;
+        }
+
+        /// <summary>
+        /// Stops movement, until <see cref="Move"/> is called again.
+        /// </summary>
+        /// <remarks>
+        /// This method is required because of the way the input system is handled in this project.
+        /// </remarks>
+        public void StopMoving()
+        {
+            Move(Vector2.zero);
         }
 
         /// <summary>
@@ -56,6 +78,18 @@ namespace Input
         /// </remarks>
         public void OpenMenu()
         {
+        }
+
+        private void Awake()
+        {
+            _rigidbody = this.RequireComponent<Rigidbody>();
+        }
+
+        private void FixedUpdate()
+        {
+            var moveVelocity = Time.fixedDeltaTime * moveSpeed * new Vector3(_moveDirection.x, 0f, _moveDirection.y);
+            moveVelocity = Vector3.ClampMagnitude(moveVelocity, maxVelocity);
+            _rigidbody.AddForce(moveVelocity, ForceMode.VelocityChange);
         }
     }
 }

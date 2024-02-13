@@ -1,5 +1,5 @@
+using System;
 using System.Diagnostics.CodeAnalysis;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Util;
@@ -28,19 +28,24 @@ namespace Input
 
         private void DelegateInput(InputAction.CallbackContext callbackContext)
         {
-            if (!callbackContext.performed)
-                return;
-
             if (callbackContext.action == null)
             {
                 Debug.LogWarning("Player input with no action!", this);
                 return;
             }
 
+            if (callbackContext.canceled && callbackContext.action.name == MoveAction)
+                _playerController.StopMoving();
+            
+            if (!callbackContext.performed)
+                return;
+
             var actionName = callbackContext.action.name;
             
             switch (actionName)
             {
+                case MoveAction:
+                    break;
                 case LookAction:
                 {
                     var lookDirectionDelta = callbackContext.ReadValue<Vector2>();
@@ -70,8 +75,9 @@ namespace Input
             _playerInput = this.RequireComponent<PlayerInput>();
             _playerController = this.RequireComponent<PlayerController>();
             _moveAction = InputSystem
-                .ListEnabledActions()
-                .Single(action => action.name == MoveAction);
+                .ListEnabledActions()?
+                .Find(action => action?.name == MoveAction)
+                ?? throw new InvalidOperationException($"There is no {MoveAction} action defined!");
         }
 
         private void OnEnable()
