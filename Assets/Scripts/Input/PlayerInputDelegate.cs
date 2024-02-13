@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -23,28 +24,28 @@ namespace Input
         private const string OpenMenuAction = nameof(Actions.PlayerActions.OpenMenu);
         [DisallowNull, NotNull] private PlayerInput _playerInput = default!;
         [DisallowNull, NotNull] private PlayerController _playerController = default!;
+        [DisallowNull, NotNull] private InputAction _moveAction = default!;
 
         private void DelegateInput(InputAction.CallbackContext callbackContext)
         {
-            if (!callbackContext.performed)
-                return;
-
             if (callbackContext.action == null)
             {
                 Debug.LogWarning("Player input with no action!", this);
                 return;
             }
 
+            if (callbackContext.canceled && callbackContext.action.name == MoveAction)
+                _playerController.StopMoving();
+            
+            if (!callbackContext.performed)
+                return;
+
             var actionName = callbackContext.action.name;
             
             switch (actionName)
             {
                 case MoveAction:
-                {
-                    var moveDirection = callbackContext.ReadValue<Vector2>();
-                    _playerController.Move(moveDirection);
                     break;
-                }
                 case LookAction:
                 {
                     var lookDirectionDelta = callbackContext.ReadValue<Vector2>();
@@ -73,6 +74,10 @@ namespace Input
         {
             _playerInput = this.RequireComponent<PlayerInput>();
             _playerController = this.RequireComponent<PlayerController>();
+            _moveAction = InputSystem
+                .ListEnabledActions()?
+                .Find(action => action?.name == MoveAction)
+                ?? throw new InvalidOperationException($"There is no {MoveAction} action defined!");
         }
 
         private void OnEnable()
@@ -83,6 +88,15 @@ namespace Input
         private void OnDisable()
         {
             _playerInput.onActionTriggered -= DelegateInput;
+        }
+
+        private void Update()
+        {
+            if (!_moveAction.inProgress)
+                return;
+
+            var moveDirection = _moveAction.ReadValue<Vector2>();
+            _playerController.Move(moveDirection);
         }
     }
 }
