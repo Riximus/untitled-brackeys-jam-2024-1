@@ -1,7 +1,13 @@
-﻿using UnityEngine;
+﻿using UnityEditor.PackageManager;
+using UnityEngine;
 
 namespace Input
 {
+    interface IInteractable
+    {
+        void Interact();
+    }
+    
     /// <summary>
     /// Controls the player character.
     /// </summary>
@@ -21,6 +27,11 @@ namespace Input
         
         [Header("Movement Settings")]
         public float moveSpeed;
+        
+        [Header("Interaction Settings")]
+        public float interactionRange;
+        
+        private Rigidbody _rigidBody;
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -78,6 +89,14 @@ namespace Input
         public void Interact()
         {
             // TODO: I think Vector3.Cross() can help identify which object is closest to "forward".
+            Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, interactionRange))
+            {
+                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObject))
+                {
+                    interactObject.Interact();
+                }
+            }
         }
 
         /// <summary>
