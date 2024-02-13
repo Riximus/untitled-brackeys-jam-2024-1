@@ -16,10 +16,10 @@ namespace Input
     [RequireComponent(typeof(Rigidbody))]
     public class PlayerController : MonoBehaviour
     {
-        [SerializeField, Tooltip("Reference to the in-game menu in this scene")]
-        private InGameMenuHandler inGameMenuHandler;
-        [SerializeField, DisallowNull, MaybeNull]
-        private PauseManager pauseManager;
+        [SerializeField, Tooltip("Reference to the in-game menu in this scene"), DisallowNull, NotNull]
+        private InGameMenuHandler inGameMenuHandler = default!;
+        [SerializeField, DisallowNull, NotNull]
+        private PauseManager pauseManager = default!;
         [SerializeField, Tooltip("Movement speed of the player")]
         private float moveSpeed;
         [SerializeField, Tooltip("Maximum velocity the player can have when moving"), Min(0f)]
@@ -84,13 +84,6 @@ namespace Input
         /// </remarks>
         public void OpenMenu()
         {
-            if (inGameMenuHandler == null)
-                throw new InvalidOperationException(
-                    $"{nameof(inGameMenuHandler)} field in {nameof(PlayerController)} component on game object {gameObject.name} was not set!");
-            if (pauseManager == null)
-                throw new InvalidOperationException(
-                    $"{nameof(pauseManager)} field in {nameof(PlayerController)} component on game object {gameObject.name} was not set!");
-
             if (pauseManager.IsPaused)
                 inGameMenuHandler.Hide();
             else
@@ -99,11 +92,29 @@ namespace Input
 
         private void Awake()
         {
+            if (inGameMenuHandler == null)
+                throw new InvalidOperationException(
+                    $"{nameof(inGameMenuHandler)} field in {nameof(PlayerController)} component on game object {gameObject.name} was not set!");
+            if (pauseManager == null)
+                throw new InvalidOperationException(
+                    $"{nameof(pauseManager)} field in {nameof(PlayerController)} component on game object {gameObject.name} was not set!");
+
             _rigidbody = this.RequireComponent<Rigidbody>();
         }
 
         private void FixedUpdate()
         {
+            if (pauseManager.IsPaused)
+            {
+                if (!_rigidbody.IsSleeping())
+                    _rigidbody.Sleep();
+
+                return;
+            }
+
+            if (_rigidbody.IsSleeping())
+                _rigidbody.WakeUp();
+
             var moveVelocity = Time.fixedDeltaTime * moveSpeed * new Vector3(_moveDirection.x, 0f, _moveDirection.y);
             moveVelocity = Vector3.ClampMagnitude(moveVelocity, maxVelocity);
             _rigidbody.AddForce(moveVelocity, ForceMode.VelocityChange);
