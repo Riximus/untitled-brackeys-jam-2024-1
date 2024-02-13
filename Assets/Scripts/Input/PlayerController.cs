@@ -28,6 +28,10 @@ namespace Input
         /// <summary>
         /// Moves the player character on the x and z axis.
         /// </summary>
+        /// <remarks>
+        /// Unlike the other input event methods, this method is called once per frame when a move input is active,
+        /// instead of when the input is performed.
+        /// </remarks>
         /// <param name="moveDirection">vector of x and z coordinates with a clamped magnitude (0..1)</param>
         public void Move(Vector2 moveDirection)
         {
