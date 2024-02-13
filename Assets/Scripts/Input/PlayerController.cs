@@ -28,7 +28,6 @@ namespace Input
         [Header("Interaction Settings")]
         public float interactionRange;
         
-        private Rigidbody _rigidBody;
         private void Start()
         {
             Cursor.lockState = CursorLockMode.Locked;
