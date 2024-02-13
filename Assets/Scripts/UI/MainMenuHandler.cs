@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 using Util;
 
@@ -11,10 +12,12 @@ namespace UI
     [RequireComponent(typeof(OptionsSubMenuHandler))]
     public class MainMenuHandler : MonoBehaviour
     {
+        [SerializeField, Tooltip("Name of the game scene"), DisallowNull, NotNull] private string gameScene = default!;
         [DisallowNull, MaybeNull] private VisualElement _menuItemContainer;
         [DisallowNull, MaybeNull] private OptionsSubMenuHandler _optionsSubMenuHandler;
         [DisallowNull, MaybeNull] private CreditsSubMenuHandler _creditsSubMenuHandler;
         [DisallowNull, MaybeNull] private VisualElement _root;
+        [DisallowNull, MaybeNull] private Button _startGameButton;
         [DisallowNull, MaybeNull] private Button _creditsButton;
         [DisallowNull, MaybeNull] private Button _optionsButton;
         [DisallowNull, MaybeNull] private Button _quitGameButton;
@@ -23,6 +26,10 @@ namespace UI
 
         private void Awake()
         {
+            if (gameScene == null)
+                throw new InvalidOperationException(
+                    $"{gameScene} is not set in {nameof(MainMenuHandler)} component on {gameObject.name}!");
+            
             _optionsSubMenuHandler = this.RequireComponent<OptionsSubMenuHandler>();
             _creditsSubMenuHandler = this.RequireComponent<CreditsSubMenuHandler>();
             var uiDocument = this.RequireComponent<UIDocument>();
@@ -40,15 +47,23 @@ namespace UI
 
             _optionsSubMenuHandler.NavigateBackRequested += OnNavigateBackRequested;
             _creditsSubMenuHandler.NavigateBackRequested += OnNavigateBackRequested;
+            _startGameButton = _root.RequireElement<Button>("start-game-button");
             _creditsButton = _root.RequireElement<Button>("credits-button");
             _optionsButton = _root.RequireElement<Button>("options-button");
             _quitGameButton = _root.RequireElement<Button>("quit-game-button");
             _menuItemContainer = _root.RequireElement<VisualElement>("menu-item-container");
             _optionsSubMenu = _root.RequireElement<OptionsSubMenu>("options-sub-menu");
             _creditsSubMenu = _root.RequireElement<CreditsSubMenu>("credits-sub-menu");
+            _startGameButton.clicked += OnStartGameButtonClicked;
             _creditsButton.clicked += OnCreditsButtonClicked;
             _optionsButton.clicked += OnOptionsButtonClicked;
             _quitGameButton.clicked += OnQuitGameButtonClicked;
+        }
+
+        private void OnStartGameButtonClicked()
+        {
+            // TODO: This should load a game save selection, but we'll load the scene directly until we have it.
+            SceneManager.LoadScene(gameScene, LoadSceneMode.Single);
         }
 
         private void OnNavigateBackRequested()
