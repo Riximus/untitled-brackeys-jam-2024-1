@@ -81,15 +81,11 @@ namespace UI
 
         private void OnEnable()
         {
-            if (_optionsSubMenuHandler == null || _inventorySubMenuHandler == null)
+            if (_optionsSubMenuHandler == null || _inventorySubMenuHandler == null || _root == null)
                 throw new InvalidOperationException($"{nameof(OnEnable)} called before {nameof(Awake)}!");
 
             _optionsSubMenuHandler.NavigateBackRequested += OnNavigateBackRequested;
             _inventorySubMenuHandler.NavigateBackRequested += OnNavigateBackRequested;
-            
-            if (_root == null)
-                throw new InvalidOperationException($"{nameof(OnEnable)} was called before {nameof(Awake)}!");
-
             _inventoryButton = _root.RequireElement<Button>("inventory-button");
             _optionsButton = _root.RequireElement<Button>("options-button");
             _continueGameButton = _root.RequireElement<Button>("continue-game-button");
@@ -98,7 +94,6 @@ namespace UI
             _menuItemContainer = _root.RequireElement<VisualElement>("menu-item-container");
             _optionsSubMenu = _root.RequireElement<OptionsSubMenu>("options-sub-menu");
             _inventorySubMenu = _root.RequireElement<InventorySubMenu>("inventory-sub-menu");
-            
             _inventoryButton.clicked += OnInventoryButtonClicked;
             _optionsButton.clicked += OnOptionsButtonClicked;
             _continueGameButton.clicked += OnContinueGameButtonClicked;

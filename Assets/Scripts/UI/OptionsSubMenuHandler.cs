@@ -32,7 +32,7 @@ namespace UI
         private void OnEnable()
         {
             var uiDocument = this.RequireComponent<UIDocument>();
-            var root = uiDocument.rootVisualElement;
+            var root = uiDocument.rootVisualElement.Q<OptionsSubMenu>();
             
             if (root == null)
                 throw new InvalidOperationException(
