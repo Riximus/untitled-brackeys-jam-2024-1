@@ -12,6 +12,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+/[Pp]roject[Ss]ettings/Packages/com.unity.testtools.codecoverage/Settings.json
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
@@ -77,4 +78,6 @@ crashlytics-build.properties
 # End of https://www.toptal.com/developers/gitignore/api/unity
 
 .idea/
+.vs/
+.vsconfig
 *.iml
