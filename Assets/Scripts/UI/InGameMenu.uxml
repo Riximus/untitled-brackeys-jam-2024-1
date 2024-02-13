@@ -19,5 +19,6 @@
             </ui:VisualElement>
         </ui:ScrollView>
         <UI.OptionsSubMenu name="options-sub-menu" class="disabled" />
+        <UI.InventorySubMenu name="inventory-sub-menu" class="disabled" />
     </ui:VisualElement>
 </ui:UXML>

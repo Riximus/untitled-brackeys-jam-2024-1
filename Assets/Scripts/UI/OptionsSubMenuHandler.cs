@@ -113,6 +113,7 @@ namespace UI
 
         private void OnBackClicked()
         {
+            OnDiscardChangesClicked();
             NavigateBackRequested?.Invoke();
         }
     }

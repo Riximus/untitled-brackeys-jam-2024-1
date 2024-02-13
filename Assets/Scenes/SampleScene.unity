@@ -810,6 +810,7 @@ GameObject:
   - component: {fileID: 1322369563}
   - component: {fileID: 1322369565}
   - component: {fileID: 1322369566}
+  - component: {fileID: 1322369567}
   m_Layer: 5
   m_Name: In-Game Menu
   m_TagString: Untagged
@@ -872,6 +873,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 165c1640471e1f346b05942beb2ff724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1322369567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1322369562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615197374ed2494b88d5b63074f412a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807

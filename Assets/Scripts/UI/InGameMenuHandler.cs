@@ -10,6 +10,7 @@ namespace UI
 {
     [RequireComponent(typeof(UIDocument))]
     [RequireComponent(typeof(OptionsSubMenuHandler))]
+    [RequireComponent(typeof(InventorySubMenuHandler))]
     public class InGameMenuHandler : MonoBehaviour
     {
         // TODO: If there's enough time, add a custom property drawer that supports scene references
@@ -143,12 +144,19 @@ namespace UI
 
         private void OnInventoryButtonClicked()
         {
+            if (_menuItemContainer == null || _inventorySubMenu == null)
+                throw new InvalidOperationException(
+                    $"{nameof(OnInventoryButtonClicked)} called before {nameof(OnEnable)}!");
             
+            _menuItemContainer.RemoveFromClassList("enabled");
+            _menuItemContainer.AddToClassList("disabled");
+            _inventorySubMenu.RemoveFromClassList("disabled");
+            _inventorySubMenu.AddToClassList("enabled");
         }
 
         private void OnOptionsButtonClicked()
         {
-            if (_menuItemContainer == null || _optionsSubMenu == null || _inventorySubMenu == null)
+            if (_menuItemContainer == null || _optionsSubMenu == null)
                 throw new InvalidOperationException(
                     $"{nameof(OnOptionsButtonClicked)} called before {nameof(OnEnable)}!");
             
@@ -156,8 +164,6 @@ namespace UI
             _menuItemContainer.AddToClassList("disabled");
             _optionsSubMenu.RemoveFromClassList("disabled");
             _optionsSubMenu.AddToClassList("enabled");
-            _inventorySubMenu.RemoveFromClassList("disabled");
-            _inventorySubMenu.AddToClassList("enabled");
         }
 
         private void OnContinueGameButtonClicked()
