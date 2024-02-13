@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/MainMenu.uss?fileID=7433441132597879392&amp;guid=e71fbf032b733204db75697e0d4dbc18&amp;type=3#MainMenu" />
+    <ui:VisualElement name="background-panel" style="flex-grow: 1; align-items: center;">
+        <ui:Label tabindex="-1" text="Behind Closed Doors" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" />
+        <ui:VisualElement name="button-column">
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Button text="Start Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="start-game-button" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Button text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" name="options-button" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Button text="Credits" parse-escape-sequences="true" display-tooltip-when-elided="true" name="credits-button" />
+            </ui:VisualElement>
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Button text="Quit Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quit-game-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <UI.OptionsSubMenu name="options-sub-menu" class="disabled" />
+        <UI.CreditsSubMenu name="credits-sub-menu" class="disabled" />
+    </ui:VisualElement>
+</ui:UXML>

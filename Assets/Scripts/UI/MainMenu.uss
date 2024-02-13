@@ -1,0 +1,27 @@
+#title {
+    -unity-text-align: upper-center;
+    font-size: 26px;
+    -unity-font-style: bold;
+}
+
+#background-panel {
+    padding-top: 5%;
+    padding-right: 10%;
+    padding-left: 10%;
+}
+
+#button-column {
+    margin-top: 10%;
+}
+
+#button-column Button {
+    min-width: 200px;
+}
+
+.disabled {
+    display: none;
+}
+
+.enabled {
+    display: flex;
+}
