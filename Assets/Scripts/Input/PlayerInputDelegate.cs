@@ -1,4 +1,3 @@
-using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using UnityEngine;
@@ -42,12 +41,6 @@ namespace Input
             
             switch (actionName)
             {
-                case MoveAction:
-                {
-                    var moveDirection = callbackContext.ReadValue<Vector2>();
-                    _playerController.Move(moveDirection);
-                    break;
-                }
                 case LookAction:
                 {
                     var lookDirectionDelta = callbackContext.ReadValue<Vector2>();
