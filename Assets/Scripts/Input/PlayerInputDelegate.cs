@@ -1,4 +1,6 @@
+using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Util;
@@ -23,6 +25,7 @@ namespace Input
         private const string OpenMenuAction = nameof(Actions.PlayerActions.OpenMenu);
         [DisallowNull, NotNull] private PlayerInput _playerInput = default!;
         [DisallowNull, NotNull] private PlayerController _playerController = default!;
+        [DisallowNull, NotNull] private InputAction _moveAction = default!;
 
         private void DelegateInput(InputAction.CallbackContext callbackContext)
         {
@@ -67,6 +70,9 @@ namespace Input
         {
             _playerInput = this.RequireComponent<PlayerInput>();
             _playerController = this.RequireComponent<PlayerController>();
+            _moveAction = InputSystem
+                .ListEnabledActions()
+                .Single(action => action.name == MoveAction);
         }
 
         private void OnEnable()
@@ -77,6 +83,15 @@ namespace Input
         private void OnDisable()
         {
             _playerInput.onActionTriggered -= DelegateInput;
+        }
+
+        private void Update()
+        {
+            if (!_moveAction.inProgress)
+                return;
+
+            var moveDirection = _moveAction.ReadValue<Vector2>();
+            _playerController.Move(moveDirection);
         }
     }
 }
