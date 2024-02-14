@@ -36,7 +36,7 @@ namespace Input
         public float cameraAngle = 60f;
         
         [Header("Interaction Settings")]
-        public float interactionRange;
+        public float interactionRange = 3;
         
         private void Start()
         {
