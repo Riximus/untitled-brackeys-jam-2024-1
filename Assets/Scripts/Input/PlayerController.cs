@@ -28,6 +28,8 @@ namespace Input
         private Vector2 _moveDirection;
         
         [Header("Camera Settings")]
+        public float cameraSensitivityX = 1;
+        public float cameraSensitivityY = 1;
         public Transform playerCamera;
         [Range(30f, 90f)]
         public float cameraAngle = 60f;
@@ -75,6 +77,9 @@ namespace Input
         /// <param name="lookDirectionDelta">contains the camera rotation around the y axis and height</param>
         public void Look(Vector2 lookDirectionDelta)
         {
+            lookDirectionDelta.x *= cameraSensitivityX;
+            lookDirectionDelta.y *= cameraSensitivityY;
+            
             var eulerAngles = transform.eulerAngles;
             float desiredRotationX = playerCamera.localEulerAngles.x - lookDirectionDelta.y;
             
