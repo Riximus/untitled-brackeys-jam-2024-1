@@ -1,4 +1,5 @@
 using System;
+using UnityEditor.PackageManager;
 using System.Diagnostics.CodeAnalysis;
 using UI;
 using UnityEngine;
@@ -6,6 +7,11 @@ using Util;
 
 namespace Input
 {
+    interface IInteractable
+    {
+        void Interact();
+    }
+    
     /// <summary>
     /// Controls the player character.
     /// </summary>
@@ -21,11 +27,27 @@ namespace Input
         [SerializeField, DisallowNull, NotNull]
         private PauseManager pauseManager = default!;
         [SerializeField, Tooltip("Movement speed of the player")]
-        private float moveSpeed;
+        private float moveSpeed = 10;
         [SerializeField, Tooltip("Maximum velocity the player can have when moving"), Min(0f)]
-        private float maxVelocity;
-        [DisallowNull, NotNull] private Rigidbody _rigidbody = default!;
+        private float maxVelocity = 2;
+        [DisallowNull, NotNull] private Rigidbody _rigidBody = default!;
         private Vector2 _moveDirection;
+        
+        [Header("Camera Settings")]
+        public float cameraSensitivityX = 1;
+        public float cameraSensitivityY = 1;
+        public Transform playerCamera;
+        [Range(30f, 90f)]
+        public float cameraAngle = 60f;
+        
+        [Header("Interaction Settings")]
+        public float interactionRange = 3;
+        
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         
         /// <summary>
         /// Moves the player character on the x and z axis.
@@ -61,10 +83,17 @@ namespace Input
         /// <param name="lookDirectionDelta">contains the camera rotation around the y axis and height</param>
         public void Look(Vector2 lookDirectionDelta)
         {
-            // TODO: The rotation using the y axis is quite hard: the camera moves up and down, but is limited.
-            //       That way the camera can never be upside down.
-            //       Additionally, the camera should zoom into and out of the player character.
-            //       Good tests are: can I look at something in the sky? can I look at something on the table?
+            lookDirectionDelta.x *= cameraSensitivityX;
+            lookDirectionDelta.y *= cameraSensitivityY;
+            
+            var eulerAngles = transform.eulerAngles;
+            float desiredRotationX = playerCamera.localEulerAngles.x - lookDirectionDelta.y;
+            
+            if(desiredRotationX > 180f) desiredRotationX -= 360f;
+            
+            float playerEulerX = Mathf.Clamp(desiredRotationX, -cameraAngle, cameraAngle);
+            playerCamera.localRotation = Quaternion.Euler(playerEulerX, 0f, 0f);
+            transform.rotation = Quaternion.Euler(0f, eulerAngles.y + lookDirectionDelta.x, 0f);
         }
 
         /// <summary>
@@ -72,7 +101,14 @@ namespace Input
         /// </summary>
         public void Interact()
         {
-            // TODO: I think Vector3.Cross() can help identify which object is closest to "forward".
+            Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+            if (Physics.Raycast(ray, out RaycastHit hitInfo, interactionRange))
+            {
+                if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObject))
+                {
+                    interactObject.Interact();
+                }
+            }
         }
 
         /// <summary>
@@ -84,6 +120,8 @@ namespace Input
         /// </remarks>
         public void OpenMenu()
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             if (pauseManager.IsPaused)
                 inGameMenuHandler.Hide();
             else
@@ -92,32 +130,31 @@ namespace Input
 
         private void Awake()
         {
+            _rigidBody = this.RequireComponent<Rigidbody>();
             if (inGameMenuHandler == null)
                 throw new InvalidOperationException(
                     $"{nameof(inGameMenuHandler)} field in {nameof(PlayerController)} component on game object {gameObject.name} was not set!");
             if (pauseManager == null)
                 throw new InvalidOperationException(
                     $"{nameof(pauseManager)} field in {nameof(PlayerController)} component on game object {gameObject.name} was not set!");
-
-            _rigidbody = this.RequireComponent<Rigidbody>();
         }
 
         private void FixedUpdate()
         {
             if (pauseManager.IsPaused)
             {
-                if (!_rigidbody.IsSleeping())
-                    _rigidbody.Sleep();
+                if (!_rigidBody.IsSleeping())
+                    _rigidBody.Sleep();
 
                 return;
             }
 
-            if (_rigidbody.IsSleeping())
-                _rigidbody.WakeUp();
+            if (_rigidBody.IsSleeping())
+                _rigidBody.WakeUp();
 
             var moveVelocity = Time.fixedDeltaTime * moveSpeed * new Vector3(_moveDirection.x, 0f, _moveDirection.y);
             moveVelocity = Vector3.ClampMagnitude(moveVelocity, maxVelocity);
-            _rigidbody.AddForce(moveVelocity, ForceMode.VelocityChange);
+            _rigidBody.AddForce(moveVelocity, ForceMode.VelocityChange);
         }
     }
 }
