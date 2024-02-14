@@ -83,6 +83,9 @@ namespace Input
         /// <param name="lookDirectionDelta">contains the camera rotation around the y axis and height</param>
         public void Look(Vector2 lookDirectionDelta)
         {
+            if (pauseManager.IsPaused)
+                return;
+            
             lookDirectionDelta.x *= cameraSensitivityX;
             lookDirectionDelta.y *= cameraSensitivityY;
             
