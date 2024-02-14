@@ -1,0 +1,24 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/InGameMenu.uss?fileID=7433441132597879392&amp;guid=eea06a38a32f9b34886f6e88f66ba764&amp;type=3#InGameMenu" />
+    <ui:VisualElement name="background-panel" class="disabled" style="flex-grow: 1;">
+        <ui:ScrollView name="menu-item-container">
+            <ui:VisualElement class="menu-item" style="flex-grow: 1;">
+                <ui:Button text="Inventory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="inventory-button" />
+            </ui:VisualElement>
+            <ui:VisualElement class="menu-item" style="flex-grow: 1;">
+                <ui:Button text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" name="options-button" />
+            </ui:VisualElement>
+            <ui:VisualElement class="menu-item" style="flex-grow: 1;">
+                <ui:Button text="Continue Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="continue-game-button" />
+            </ui:VisualElement>
+            <ui:VisualElement class="menu-item" style="flex-grow: 1;">
+                <ui:Button text="Quit To Main Menu" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quit-to-main-menu-button" />
+            </ui:VisualElement>
+            <ui:VisualElement class="menu-item" style="flex-grow: 1;">
+                <ui:Button text="Quit Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="quit-game-button" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+        <UI.OptionsSubMenu name="options-sub-menu" class="disabled" />
+        <UI.InventorySubMenu name="inventory-sub-menu" class="disabled" />
+    </ui:VisualElement>
+</ui:UXML>
