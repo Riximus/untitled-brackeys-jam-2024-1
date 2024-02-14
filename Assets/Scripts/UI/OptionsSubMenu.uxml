@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/OptionsSubMenu.uss?fileID=7433441132597879392&amp;guid=d476fc9a8957d6e4f996d1ebddb65ebe&amp;type=3#OptionsSubMenu" />
+    <ui:ScrollView name="content">
+        <ui:VisualElement style="flex-grow: 1;">
+            <ui:Slider label="Master Volume" high-value="1" name="master-volume-slider" />
+        </ui:VisualElement>
+    </ui:ScrollView>
+    <ui:VisualElement name="main-button-row" style="flex-grow: 0; justify-content: center;">
+        <ui:Button text="Save Changes" parse-escape-sequences="true" display-tooltip-when-elided="true" name="save-changes-button" />
+        <ui:Button text="Discard Changes" parse-escape-sequences="true" display-tooltip-when-elided="true" name="discard-changes-button" />
+        <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="back-button" />
+    </ui:VisualElement>
+</ui:UXML>

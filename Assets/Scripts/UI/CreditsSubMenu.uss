@@ -1,0 +1,12 @@
+.mention-name {
+    -unity-font-style: bold;
+}
+
+.mention-title {
+}
+
+.mention-link {
+}
+
+.mention-container {
+}
