@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using Input;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UIElements;
+using Util;
 using Cursor = UnityEngine.Cursor;
 
 namespace Dialogue
@@ -24,17 +26,40 @@ namespace Dialogue
 
         private int _currentDialogueIndex = 0;
         
+        [DisallowNull, MaybeNull] private VisualElement _root;
+        private VisualElement _dialogueWindow;
+        private VisualElement _dialogueContainer;
+        private VisualElement _textContainer;
+        private VisualElement _optionsContainer;
         private Button _option1Button;
         private Button _option2Button;
         private Label _dialogueText;
 
+        private void Awake()
+        {
+            var uiDocument = dialogueParent.GetComponent<UIDocument>();
+            var root = uiDocument.rootVisualElement;
+
+            _root = root
+                    ?? throw new InvalidOperationException(
+                        $"{nameof(UIDocument)} component on {gameObject.name} has no root element!");
+        }
+
         private void OnEnable()
         {
-            VisualElement root = GetComponent<UIDocument>().rootVisualElement;
-            
-            _option1Button = root.Q<Button>("option-1");
-            _option2Button = root.Q<Button>("option-2");
-            _dialogueText = root.Q<Label>("dialogue-text");
+    
+            _dialogueWindow = _root?.RequireElement<VisualElement>("dialogue-window");
+            _dialogueContainer = _root?.RequireElement<VisualElement>("dialogue-container");
+            _textContainer = _root?.RequireElement<VisualElement>("text-container");
+            _optionsContainer = _root?.RequireElement<VisualElement>("options-container");
+            _option1Button = _root?.RequireElement<Button>("option-1");
+            _option2Button = _root?.RequireElement<Button>("option-2");
+            _dialogueText = _root?.RequireElement<Label>("dialogue-text");
+
+            if (_option1Button == null || _option2Button == null || _dialogueText == null)
+            {
+                Debug.LogError("One or more UI elements were not found. Check the names and ensure UIDocument is correctly set up.");
+            }
         }
 
         private void Start()
@@ -62,11 +87,18 @@ namespace Dialogue
 
         private void DisableButtons()
         {
-            _option1Button.SetEnabled(false);
-            _option2Button.SetEnabled(false);
-            
-            _option1Button.visible = false;
-            _option2Button.visible = false;
+            if (_option1Button != null && _option2Button != null)
+            {
+                _option1Button.SetEnabled(false);
+                _option2Button.SetEnabled(false);
+        
+                _option1Button.visible = false;
+                _option2Button.visible = false;
+            }
+            else
+            {
+                Debug.LogError("Attempted to disable buttons that are not initialized.");
+            }
         }
 
         private IEnumerator TurnCameraTowardsNpc(Transform npc)
@@ -122,7 +154,49 @@ namespace Dialogue
                 _optionSelected = false;
             }
 
-            DialogueStop(); // TODO: https://youtu.be/BEaOHWkZhtE?si=12I340BuZDSiqUw7&t=1224
+            DialogueStop();
+        }
+        
+        private void HandleOptionSelected(int indexNextDialogue)
+        {
+            _optionSelected = true;
+            DisableButtons();
+            
+            _currentDialogueIndex = indexNextDialogue;
+        }
+        
+        private IEnumerator TypeText(string text)
+        {
+            _dialogueText.text = "";
+            foreach (char letter in text) // Maybe toCharArray()?
+            {
+                _dialogueText.text += letter;
+                yield return new WaitForSeconds(typingSpeed);
+            }
+
+            if (!_dialogueList[_currentDialogueIndex].isQuestion)
+            {
+                yield return new WaitUntil(() => UnityEngine.Input.GetMouseButtonDown(0));
+            }
+
+            if (_dialogueList[_currentDialogueIndex].isEndOfDialogue)
+            {
+                DialogueStop();
+            }
+            
+            _currentDialogueIndex++;
+        }
+        
+        private void DialogueStop()
+        {
+            StopAllCoroutines();
+            _dialogueText.text = "";
+            dialogueParent.SetActive(false);
+            
+            playerController.enabled = true;
+            
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
     }
 }
