@@ -1403,8 +1403,8 @@ MonoBehaviour:
     isQuestion: 0
     answerOption1: 
     answerOption2: 
-    nextDialogue1: 2
-    nextDialogue2: 3
+    nextDialogue1: 0
+    nextDialogue2: 0
     startDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -1416,8 +1416,8 @@ MonoBehaviour:
     isQuestion: 1
     answerOption1: I'm good
     answerOption2: Stfu
-    nextDialogue1: 0
-    nextDialogue2: 0
+    nextDialogue1: 2
+    nextDialogue2: 3
     startDialogueEvent:
       m_PersistentCalls:
         m_Calls: []

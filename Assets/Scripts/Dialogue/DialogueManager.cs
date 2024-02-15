@@ -37,29 +37,12 @@ namespace Dialogue
 
         private void Awake()
         {
-            var uiDocument = dialogueParent.GetComponent<UIDocument>();
-            var root = uiDocument.rootVisualElement;
-
-            _root = root
-                    ?? throw new InvalidOperationException(
-                        $"{nameof(UIDocument)} component on {gameObject.name} has no root element!");
+            // We had to move stuff over to DialogueStart
         }
 
         private void OnEnable()
         {
-    
-            _dialogueWindow = _root?.RequireElement<VisualElement>("dialogue-window");
-            _dialogueContainer = _root?.RequireElement<VisualElement>("dialogue-container");
-            _textContainer = _root?.RequireElement<VisualElement>("text-container");
-            _optionsContainer = _root?.RequireElement<VisualElement>("options-container");
-            _option1Button = _root?.RequireElement<Button>("option-1");
-            _option2Button = _root?.RequireElement<Button>("option-2");
-            _dialogueText = _root?.RequireElement<Label>("dialogue-text");
-
-            if (_option1Button == null || _option2Button == null || _dialogueText == null)
-            {
-                Debug.LogError("One or more UI elements were not found. Check the names and ensure UIDocument is correctly set up.");
-            }
+            // We had to move stuff over to DialogueStart
         }
 
         private void Start()
@@ -79,6 +62,26 @@ namespace Dialogue
             
             _dialogueList = dialogueStrings;
             _currentDialogueIndex = 0;
+            
+            var uiDocument = dialogueParent.GetComponent<UIDocument>();
+            var root = uiDocument.rootVisualElement;
+
+            _root = root
+                    ?? throw new InvalidOperationException(
+                        $"{nameof(UIDocument)} component on {gameObject.name} has no root element!");
+            
+            _dialogueWindow = _root?.RequireElement<VisualElement>("dialogue-window");
+            _dialogueContainer = _root?.RequireElement<VisualElement>("dialogue-container");
+            _textContainer = _root?.RequireElement<VisualElement>("text-container");
+            _optionsContainer = _root?.RequireElement<VisualElement>("options-container");
+            _option1Button = _root?.RequireElement<Button>("option-1");
+            _option2Button = _root?.RequireElement<Button>("option-2");
+            _dialogueText = _root?.RequireElement<Label>("dialogue-text");
+
+            if (_option1Button == null || _option2Button == null || _dialogueText == null)
+            {
+                Debug.LogError("One or more UI elements were not found. Check the names and ensure UIDocument is correctly set up.");
+            }
 
             DisableButtons();
             
