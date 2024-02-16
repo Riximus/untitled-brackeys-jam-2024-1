@@ -1,6 +1,7 @@
 using System;
 using UnityEditor.PackageManager;
 using System.Diagnostics.CodeAnalysis;
+using Dialogue;
 using UI;
 using UnityEngine;
 using Util;
@@ -106,7 +107,23 @@ namespace Input
             {
                 if (hitInfo.collider.gameObject.TryGetComponent(out IInteractable interactObject))
                 {
-                    interactObject.Interact();
+                    DialogueTrigger[] dialogueTriggers = hitInfo.collider.gameObject.GetComponents<DialogueTrigger>();
+                    
+                    if (dialogueTriggers.Length > 0)
+                    {
+                        foreach (var dialogueTrigger in dialogueTriggers)
+                        {
+                            if (!dialogueTrigger.hasDialogueTriggered)
+                            {
+                                dialogueTrigger.Interact();
+                                break;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        interactObject.Interact();
+                    }
                 }
             }
         }

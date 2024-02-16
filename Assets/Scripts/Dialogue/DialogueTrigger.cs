@@ -9,21 +9,20 @@ namespace Dialogue
 {
     public class DialogueTrigger : MonoBehaviour, IInteractable
     {
+        [SerializeField] public bool hasDialogueTriggered = false;
         [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
         [SerializeField] private Transform npcTransform;
         //[SerializeField] private GameObject player;
-
-        private bool _hasSpoken = false;
         
         private void StartDialogue()
         {
-            if (!_hasSpoken)
+            if (!hasDialogueTriggered)
             {
                 GameObject player = GameObject.FindGameObjectWithTag("Player");
                 if (player != null)
                 {
                     player.GetComponent<DialogueManager>().DialogueStart(dialogueStrings, npcTransform);
-                    _hasSpoken = true;
+                    hasDialogueTriggered = true;
                 }
             }
         }
