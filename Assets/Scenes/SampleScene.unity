@@ -1395,26 +1395,14 @@ MonoBehaviour:
   - indexReadOnly: 
     text: You are back?
     isEndOfDialogue: 0
-    isQuestion: 0
+    isQuestion: 1
     answerOption1: Yes why do you care.
     answerOption2: Why bother.
     nextDialogue1: 1
     nextDialogue2: 2
     startDialogueEvent:
       m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
+        m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
