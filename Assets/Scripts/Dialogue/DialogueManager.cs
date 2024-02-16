@@ -129,6 +129,8 @@ namespace Dialogue
                 
                 line.startDialogueEvent?.Invoke();
                 
+                line.indexReadOnly = _currentDialogueIndex.ToString() + ": " + line.text;
+                
                 if (line.isQuestion)
                 {
                     yield return StartCoroutine(TypeText(line.text));

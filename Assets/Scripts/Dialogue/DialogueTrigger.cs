@@ -46,6 +46,7 @@ namespace Dialogue
     [System.Serializable]
     public class DialogueString
     {
+        public string indexReadOnly; // The index of the dialogue
         public string text; // The text to display what the NPC is saying
         public bool isEndOfDialogue; // Whether or not this is the end of the dialogue
         
