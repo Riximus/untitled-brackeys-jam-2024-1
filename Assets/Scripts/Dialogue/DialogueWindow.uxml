@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/Dialogue/DialogueWindowStyles.uss?fileID=7433441132597879392&amp;guid=befb285cca68f2e4691cba9a05ecda09&amp;type=3#DialogueWindowStyles" />
+    <ui:VisualElement name="dialogue-window" style="flex-grow: 1; justify-content: flex-end;">
+        <ui:VisualElement name="dialogue-container" style="flex-grow: 0; flex-basis: 33%; flex-direction: row;">
+            <ui:VisualElement name="text-container" style="flex-grow: 1; padding-top: 30px; padding-right: 0; padding-bottom: 30px; padding-left: 0; justify-content: center; align-items: center;">
+                <ui:Label tabindex="-1" text="Hello how are you today my dear? Are you doing well this days? They are pretty harsh!" parse-escape-sequences="true" display-tooltip-when-elided="true" name="dialogue-text" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; width: 90%; flex-grow: 1; max-width: 90%; white-space: normal; text-overflow: clip; -unity-text-align: middle-center; font-size: 35px; background-color: rgba(0, 0, 0, 0.39); color: rgb(255, 255, 255);" />
+            </ui:VisualElement>
+            <ui:VisualElement name="options-container" style="flex-grow: 0; width: 33%; align-items: center; justify-content: space-around; align-self: stretch; padding-top: 50px; padding-bottom: 50px;">
+                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="option-1" class="button" style="width: 80%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; height: 30%; max-width: 80%;" />
+                <ui:Button text="Button" parse-escape-sequences="true" display-tooltip-when-elided="true" name="option-2" class="button" style="width: 80%; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; height: 30%; max-width: 80%;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
