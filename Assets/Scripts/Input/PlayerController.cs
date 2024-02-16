@@ -84,6 +84,9 @@ namespace Input
         /// <param name="lookDirectionDelta">contains the camera rotation around the y axis and height</param>
         public void Look(Vector2 lookDirectionDelta)
         {
+            if (pauseManager.IsPaused)
+                return;
+            
             lookDirectionDelta.x *= cameraSensitivityX;
             lookDirectionDelta.y *= cameraSensitivityY;
             
@@ -158,19 +161,30 @@ namespace Input
 
         private void FixedUpdate()
         {
+            if (IsRunning())
+                UpdateVelocity();
+        }
+
+        private bool IsRunning()
+        {
             if (pauseManager.IsPaused)
             {
                 if (!_rigidBody.IsSleeping())
                     _rigidBody.Sleep();
 
-                return;
+                return false;
             }
 
             if (_rigidBody.IsSleeping())
                 _rigidBody.WakeUp();
+            
+            return true;
+        }
 
+        private void UpdateVelocity()
+        {
             var moveVelocity = Time.fixedDeltaTime * moveSpeed * new Vector3(_moveDirection.x, 0f, _moveDirection.y);
-            moveVelocity = Vector3.ClampMagnitude(moveVelocity, maxVelocity);
+            moveVelocity = Vector3.ClampMagnitude(transform.rotation * moveVelocity, maxVelocity);
             _rigidBody.AddForce(moveVelocity, ForceMode.VelocityChange);
         }
     }
