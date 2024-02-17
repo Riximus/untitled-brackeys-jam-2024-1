@@ -124,66 +124,40 @@ namespace Dialogue
 
         private IEnumerator PrintDialogue()
         {
-            Action option1Handler = null;
-            Action option2Handler = null;
-
             while (_currentDialogueIndex < _dialogueList.Count)
             {
                 DialogueString line = _dialogueList[_currentDialogueIndex];
-		
+                
                 line.startDialogueEvent?.Invoke();
-		
+                
                 line.indexReadOnly = _currentDialogueIndex.ToString() + ": " + line.text;
-		
+                
                 if (line.isQuestion)
                 {
                     yield return StartCoroutine(TypeText(line.text));
 
                     _option1Button.SetEnabled(true);
                     _option2Button.SetEnabled(true);
-			
+                    
                     _option1Button.text = line.answerOption1;
                     _option2Button.text = line.answerOption2;
-			
+                    
                     _option1Button.visible = true;
                     _option2Button.visible = true;
-			
-                    // Ensure old handlers are unsubscribed
-                    if (option1Handler == null)
-                    {
-                        option1Handler = () => HandleOptionSelected(line.nextDialogue1);
-                        _option1Button.clicked += option1Handler;
-                    }
-                    if (option2Handler == null)
-                    {
-                        option2Handler = () => HandleOptionSelected(line.nextDialogue2);
-                        _option2Button.clicked += option2Handler;
-                    }
-			
-                    yield return new WaitUntil(() => _optionSelected);
+                    
+                    _option1Button.clicked += () => HandleOptionSelected(line.nextDialogue1);
+                    _option2Button.clicked += () => HandleOptionSelected(line.nextDialogue2);
 
-                    // Optionally, unsubscribe immediately after the choice is made
-                    _option1Button.clicked -= option1Handler;
-                    _option2Button.clicked -= option2Handler;
+                    yield return new WaitUntil(() => _optionSelected);
                 }
                 else
                 {
                     yield return StartCoroutine(TypeText(line.text));
                 }
-		
+                
                 line.endDialogueEvent?.Invoke();
-		
+                
                 _optionSelected = false;
-            }
-
-            // Cleanup: Unsubscribe from any remaining subscriptions
-            if (option1Handler != null)
-            {
-                _option1Button.clicked -= option1Handler;
-            }
-            if (option2Handler != null)
-            {
-                _option2Button.clicked -= option2Handler;
             }
 
             DialogueStop();
