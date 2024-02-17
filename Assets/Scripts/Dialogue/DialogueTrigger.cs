@@ -14,6 +14,15 @@ namespace Dialogue
         [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
         [SerializeField] private Transform npcTransform;
         //[SerializeField] private GameObject player;
+
+        /// <summary>
+        /// Returns a copy of the dialogue string list.
+        /// </summary>
+        /// <returns>a copy of the dialogue strings list with references to the correct dialogue strings</returns>
+        public DialogueString[] GetDialogueStrings()
+        {
+            return dialogueStrings.ToArray();
+        }
         
         private void StartDialogue()
         {
