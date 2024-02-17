@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/Scripts/UI/JournalEntry.uss?fileID=7433441132597879392&amp;guid=85f8700331e35004f9c6b8923d6fe532&amp;type=3#JournalEntry" />
     <ui:VisualElement name="container" style="flex-grow: 1;">
         <ui:VisualElement name="image-container" style="flex-grow: 1;">
-            <ui:Image name="item-image" />
+            <ui:Image name="item-icon"/>
         </ui:VisualElement>
         <ui:VisualElement name="text-container" style="flex-grow: 1;">
             <ui:Label tabindex="-1" text="{item.name}" parse-escape-sequences="true" display-tooltip-when-elided="true" name="item-name" />

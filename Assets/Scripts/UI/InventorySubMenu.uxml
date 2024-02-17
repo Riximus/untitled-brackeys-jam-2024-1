@@ -3,10 +3,11 @@
     <ui:Label tabindex="-1" text="Inventory" parse-escape-sequences="true" display-tooltip-when-elided="true" name="title" />
     <ui:VisualElement style="flex-grow: 1;">
         <ui:Label tabindex="-1" text="Items" parse-escape-sequences="true" display-tooltip-when-elided="true" name="sub-title" />
-        <ui:ListView name="item-list" />
+        <ui:ScrollView name="item-list" />
     </ui:VisualElement>
     <ui:VisualElement style="flex-grow: 1;">
         <ui:Label tabindex="-1" text="Facts" parse-escape-sequences="true" display-tooltip-when-elided="true" name="sub-title" />
-        <ui:ListView name="fact-list" />
+        <ui:ScrollView name="fact-list" />
     </ui:VisualElement>
+    <ui:Button text="Back" parse-escape-sequences="true" display-tooltip-when-elided="true" name="back-button" />
 </ui:UXML>

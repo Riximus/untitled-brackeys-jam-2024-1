@@ -3,6 +3,6 @@
 }
 
 #item-name {
-    font-size: 16px;
+    font-size: 14px;
     -unity-font-style: bold;
 }

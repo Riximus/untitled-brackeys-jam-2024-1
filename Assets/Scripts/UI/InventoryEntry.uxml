@@ -2,7 +2,7 @@
     <Style src="project://database/Assets/Scripts/UI/InventoryEntry.uss?fileID=7433441132597879392&amp;guid=c1bc00158e65de041b7c84e5a1b9cdd0&amp;type=3#InventoryEntry" />
     <ui:VisualElement name="container" style="flex-grow: 1;">
         <ui:VisualElement name="image-container" style="flex-grow: 1;">
-            <ui:Image name="item-image"/>
+            <ui:Image name="item-icon"/>
         </ui:VisualElement>
         <ui:VisualElement name="text-container" style="flex-grow: 1;">
             <ui:Label tabindex="-1" text="{item.name}" parse-escape-sequences="true" display-tooltip-when-elided="true" name="item-name" />

@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Inventory;
 using UnityEngine;
@@ -13,8 +13,9 @@ namespace UI
         [SerializeField] private Item[] allItems;
         [SerializeField] private InventoryHandler inventoryHandler;
         [SerializeField] private UIDocument uiDocument;
-        private InventorySubMenu _inventorySubMenu;
-        
+        [DisallowNull, NotNull] private InventorySubMenu _inventorySubMenu = default!;
+        [DisallowNull, NotNull] private Button _backButton = default!;
+
         public event Action NavigateBackRequested;
 
         public void Cancel()
@@ -30,7 +31,7 @@ namespace UI
             foreach (var itemAmount in itemAmounts)
             {
                 var item = allItems.FirstOrDefault(item => item.Kind == itemAmount.kind);
-                
+
                 if (item == null)
                     continue;
 
@@ -45,6 +46,22 @@ namespace UI
         private void Awake()
         {
             _inventorySubMenu = uiDocument.rootVisualElement.RequireElement<InventorySubMenu>("inventory-sub-menu");
+            _backButton = _inventorySubMenu.RequireElement<Button>("back-button");
+        }
+
+        private void OnEnable()
+        {
+            _backButton.clicked += OnBackButtonClicked;
+        }
+
+        private void OnDisable()
+        {
+            _backButton.clicked -= OnBackButtonClicked;
+        }
+
+        private void OnBackButtonClicked()
+        {
+            NavigateBackRequested?.Invoke();
         }
     }
 }

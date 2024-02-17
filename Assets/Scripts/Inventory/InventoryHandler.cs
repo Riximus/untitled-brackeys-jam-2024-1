@@ -9,6 +9,7 @@ namespace Inventory
     {
         [DisallowNull, NotNull] private readonly Dictionary<ItemKind, uint> _items = new();
         [DisallowNull, NotNull] private readonly List<Fact> _facts = new();
+        [SerializeField] private Fact debugFact;
 
         public void AddToInventory(ItemKind item)
         {
@@ -48,6 +49,18 @@ namespace Inventory
         public void RemoveAll(ItemKind item)
         {
             _items.Remove(item);
+        }
+
+        [ContextMenu("add book")]
+        public void AddBook()
+        {
+            AddToInventory(ItemKind.Book);
+        }
+
+        [ContextMenu("add fact")]
+        public void AddFact()
+        {
+            AddToInventory(debugFact);
         }
     }
 }
