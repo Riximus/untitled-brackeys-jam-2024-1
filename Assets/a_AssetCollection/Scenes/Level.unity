@@ -1894,6 +1894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryHandler: {fileID: 359473993}
+  requiredItem: 0
   requiredNotesheetCount: 3
 --- !u!4 &508382653 stripped
 Transform:
@@ -3023,6 +3024,7 @@ GameObject:
   - component: {fileID: 1102431870}
   - component: {fileID: 1102431873}
   - component: {fileID: 1102431872}
+  - component: {fileID: 1102431874}
   m_Layer: 0
   m_Name: LibrarianDialogue
   m_TagString: Untagged
@@ -3324,6 +3326,21 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   npcTransform: {fileID: 0}
+--- !u!114 &1102431874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f3bb547ddbc9478fb25d3f3184ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryHandler: {fileID: 359473993}
+  requiredItem: 1
+  requiredNotesheetCount: 2
 --- !u!1 &1116828931 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1672147471839840, guid: 0616c9d1be2a091459a73cfb6ac35a49, type: 3}
@@ -5548,6 +5565,7 @@ GameObject:
   - component: {fileID: 1891934412}
   - component: {fileID: 1891934415}
   - component: {fileID: 1891934414}
+  - component: {fileID: 1891934416}
   m_Layer: 0
   m_Name: CarpenterDialogue
   m_TagString: Untagged
@@ -5903,6 +5921,21 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   npcTransform: {fileID: 0}
+--- !u!114 &1891934416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891934411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f3bb547ddbc9478fb25d3f3184ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryHandler: {fileID: 359473993}
+  requiredItem: 2
+  requiredNotesheetCount: 1
 --- !u!1001 &1947486988
 PrefabInstance:
   m_ObjectHideFlags: 0
