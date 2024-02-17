@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/JournalEntry.uss?fileID=7433441132597879392&amp;guid=85f8700331e35004f9c6b8923d6fe532&amp;type=3#JournalEntry" />
+    <ui:VisualElement name="container" style="flex-grow: 1;">
+        <ui:VisualElement name="image-container" style="flex-grow: 1;">
+            <ui:Image name="item-image" />
+        </ui:VisualElement>
+        <ui:VisualElement name="text-container" style="flex-grow: 1;">
+            <ui:Label tabindex="-1" text="{item.name}" parse-escape-sequences="true" display-tooltip-when-elided="true" name="item-name" />
+            <ui:Label tabindex="-1" text="{item.description}" parse-escape-sequences="true" display-tooltip-when-elided="true" name="item-description" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

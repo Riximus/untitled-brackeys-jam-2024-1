@@ -1,0 +1,16 @@
+#container {
+    flex-direction: row;
+}
+
+#image-container {
+    flex-grow: 0;
+}
+
+#item-name {
+    -unity-font-style: bold;
+    font-size: 14px;
+}
+
+#text-container {
+    flex-grow: 1;
+}
