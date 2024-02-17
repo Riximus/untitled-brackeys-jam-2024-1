@@ -15,6 +15,11 @@ namespace Inventory
             if (!_items.TryAdd(item, 1))
                 _items[item] += 1;
         }
+        
+        public void AddMagicFlowerToInventory()
+        {
+            AddToInventory(ItemKind.MagicFlower);
+        }
 
         public void AddToInventory(Fact fact)
         {

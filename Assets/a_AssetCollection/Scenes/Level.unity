@@ -1516,6 +1516,8 @@ GameObject:
   - component: {fileID: 458897978}
   - component: {fileID: 458897980}
   - component: {fileID: 458897981}
+  - component: {fileID: 458897983}
+  - component: {fileID: 458897982}
   m_Layer: 0
   m_Name: MusicianDialogue
   m_TagString: Untagged
@@ -1940,7 +1942,19 @@ MonoBehaviour:
         m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 458897983}
+          m_TargetAssemblyTypeName: DialogueInventoryCheck, Assembly-CSharp
+          m_MethodName: UpdateDialogIfItemsWereFound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   npcTransform: {fileID: 0}
 --- !u!114 &458897979
 MonoBehaviour:
@@ -1967,7 +1981,19 @@ MonoBehaviour:
     nextDialogue2: 0
     startDialogueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 458897982}
+          m_TargetAssemblyTypeName: Inventory.InventoryHandler, Assembly-CSharp
+          m_MethodName: AddMagicFlowerToInventory
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     endDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -2213,6 +2239,33 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 0
   requiredItemCount: 3
+--- !u!114 &458897982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527053ab9e2b46e7a7416a2f8d55a9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &458897983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f3bb547ddbc9478fb25d3f3184ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryHandler: {fileID: 359473993}
+  requiredItem: 2
+  requiredItemCount: 2
 --- !u!4 &508382653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4333350046235020, guid: 0cfb7b9f82ba92f46947e6664d9831d5, type: 3}
@@ -3345,6 +3398,8 @@ GameObject:
   - component: {fileID: 1102431876}
   - component: {fileID: 1102431875}
   - component: {fileID: 1102431877}
+  - component: {fileID: 1102431879}
+  - component: {fileID: 1102431878}
   m_Layer: 0
   m_Name: LibrarianDialogue
   m_TagString: Untagged
@@ -3671,7 +3726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hasDialogueTriggered: 0
-  isLoopingDialogue: 0
+  isLoopingDialogue: 1
   dialogueStrings:
   - indexReadOnly: 
     text: Oh the books look heavier than I had in mind. I hope your back is not hurt.
@@ -3683,7 +3738,19 @@ MonoBehaviour:
     nextDialogue2: 0
     startDialogueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1102431878}
+          m_TargetAssemblyTypeName: Inventory.InventoryHandler, Assembly-CSharp
+          m_MethodName: AddMagicFlowerToInventory
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
     endDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
@@ -4026,7 +4093,19 @@ MonoBehaviour:
         m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1102431879}
+          m_TargetAssemblyTypeName: DialogueInventoryCheck, Assembly-CSharp
+          m_MethodName: UpdateDialogIfItemsWereFound
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   npcTransform: {fileID: 0}
 --- !u!114 &1102431877
 MonoBehaviour:
@@ -4043,6 +4122,33 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 1
   requiredItemCount: 3
+--- !u!114 &1102431878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 527053ab9e2b46e7a7416a2f8d55a9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1102431879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 602f3bb547ddbc9478fb25d3f3184ffb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryHandler: {fileID: 359473993}
+  requiredItem: 2
+  requiredItemCount: 2
 --- !u!1 &1116828931 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1672147471839840, guid: 0616c9d1be2a091459a73cfb6ac35a49, type: 3}
@@ -6343,7 +6449,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1891934417}
           m_TargetAssemblyTypeName: DialogueInventoryCheck, Assembly-CSharp
-          m_MethodName: UpdateDialogIfItemsWereFound
+          m_MethodName: UpdateDialogIfVillagersCalled
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
