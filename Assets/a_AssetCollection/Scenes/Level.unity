@@ -1500,6 +1500,8 @@ GameObject:
   - component: {fileID: 458897975}
   - component: {fileID: 458897974}
   - component: {fileID: 458897977}
+  - component: {fileID: 458897979}
+  - component: {fileID: 458897978}
   m_Layer: 0
   m_Name: MusicianDialogue
   m_TagString: Untagged
@@ -1844,6 +1846,220 @@ MonoBehaviour:
   - indexReadOnly: Looping till quest done.
     text: I can see that you that you are missing the music sheets.
     isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &458897978
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 1
+  dialogueStrings:
+  - indexReadOnly: 
+    text: I really need a new waterproof stack of papers.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Sadly they stopped delivering them to me. Oh well.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Have a nice day or night friend.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &458897979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: 
+    text: 'MY MUSIC SHEETS! '
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Thank you sooooo much!!
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Such a wave of happy feelings. Did not feel that for so long.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Such a wave of happy feelings. Did not feel that for so long.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: This feeling just made me remember something.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Before everything got depressing out here. Before ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: ... the door was closed.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Maybe I'm just thinking out loud.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Nothing will be the same anyways.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: If you need something to pay my debt to your kindness. Hit me up.
+    isEndOfDialogue: 1
     isQuestion: 0
     answerOption1: 
     answerOption2: 
@@ -2978,6 +3194,7 @@ GameObject:
   - component: {fileID: 1102431870}
   - component: {fileID: 1102431873}
   - component: {fileID: 1102431872}
+  - component: {fileID: 1102431874}
   m_Layer: 0
   m_Name: LibrarianDialogue
   m_TagString: Untagged
@@ -3272,6 +3489,36 @@ MonoBehaviour:
     answerOption2: Okay, only this time.
     nextDialogue1: 12
     nextDialogue2: 8
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &1102431874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: 
+    text: Oh the books look heavier than I had in mind. I hope your back is not hurt.
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: 'You '
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
     startDialogueEvent:
       m_PersistentCalls:
         m_Calls: []
