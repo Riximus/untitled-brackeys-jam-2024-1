@@ -1502,6 +1502,7 @@ GameObject:
   - component: {fileID: 458897977}
   - component: {fileID: 458897979}
   - component: {fileID: 458897978}
+  - component: {fileID: 458897980}
   m_Layer: 0
   m_Name: MusicianDialogue
   m_TagString: Untagged
@@ -2059,6 +2060,106 @@ MonoBehaviour:
         m_Calls: []
   - indexReadOnly: 
     text: If you need something to pay my debt to your kindness. Hit me up.
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &458897980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: 
+    text: You look like you are in a hurry. What's up?
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: Please come to the carpenters place.
+    answerOption2: Could you go and visit the carpenter?
+    nextDialogue1: 1
+    nextDialogue2: 1
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: 'Why would I do that? '
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: Remember who brought you the music sheets?
+    answerOption2: It's for the "community"
+    nextDialogue1: 2
+    nextDialogue2: 3
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I remember... but...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: 'Do I really need to. '
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Yea, would be probably unfair if I did not pay back.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I hope I see you there too. Can't be alone with them for too long.
     isEndOfDialogue: 1
     isQuestion: 0
     answerOption1: 
@@ -3195,6 +3296,8 @@ GameObject:
   - component: {fileID: 1102431873}
   - component: {fileID: 1102431872}
   - component: {fileID: 1102431874}
+  - component: {fileID: 1102431876}
+  - component: {fileID: 1102431875}
   m_Layer: 0
   m_Name: LibrarianDialogue
   m_TagString: Untagged
@@ -3514,8 +3617,348 @@ MonoBehaviour:
   - indexReadOnly: 
     text: Oh the books look heavier than I had in mind. I hope your back is not hurt.
     isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Either way. Thank you for finding them!
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Oh, this book title.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: '"What''s behind the door?"'
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: The author is "Brackeys Jam".
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Probably a stranger that once visited this island long time ago.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: People from the outside are too curious about the door.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: To be honest. I can't blame them. Still ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: They should stick their noses in books instead.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: In other words. Thank you for helping me.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: If you need anything you know where I will be.
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &1102431875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: 
+    text: I could sense your staring from miles away.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: How can I help you?
+    isEndOfDialogue: 0
     isQuestion: 1
-    answerOption1: 'You '
+    answerOption1: It might upset you but join me at the carpenter.
+    answerOption2: We are waiting for you at the carpenter.
+    nextDialogue1: 2
+    nextDialogue2: 2
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I did not expect you asking me THAT.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: 'You know how I feel about this. '
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Question
+    text: Also another stranger in our business. Why should I join you?
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: The community needs to get back together.
+    answerOption2: I felt like it.
+    nextDialogue1: 7
+    nextDialogue2: 5
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Going with your gut I see.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I suppose I know your feeling. I should do that more often too.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Maybe we really need to get the community back together.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: That might also solve the issue not getting the books back.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Okay. I will got there.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: See you around. Bye.
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &1102431876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 1
+  dialogueStrings:
+  - indexReadOnly: 
+    text: Nothing beats a good book and a hot chai in days like these!
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
     answerOption2: 
     nextDialogue1: 0
     nextDialogue2: 0
@@ -5750,6 +6193,7 @@ GameObject:
   - component: {fileID: 1891934412}
   - component: {fileID: 1891934415}
   - component: {fileID: 1891934414}
+  - component: {fileID: 1891934416}
   m_Layer: 0
   m_Name: CarpenterDialogue
   m_TagString: Untagged
@@ -6093,6 +6537,234 @@ MonoBehaviour:
   - indexReadOnly: 
     text: I need some time alone to think. Bother the other villagers.
     isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &1891934416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891934411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 1
+  dialogueStrings:
+  - indexReadOnly: 
+    text: Welcome.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: We have talked.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: There were misunderstandings.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: We should have talked it out but everyone has their stubborn way.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I and they apologized. This surely would not have gone for longer if not
+      today.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: In the end we are stuck here in this tiny island.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: This day would have come sooner or later.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Though I wished it would have come sooner but that was also on me.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Question "They allowed me"
+    text: They allowed me.
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: What did they allow you?
+    answerOption2: You let them command you?
+    nextDialogue1: 10
+    nextDialogue2: 9
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: HA! I'm sure a stubborn guy but at my heart will not do anything to harm
+      anyone.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: They allowed me to open the door.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: But I declined.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I wanted someone else to open it.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Would you be so kind and do us the honor?
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: If you are sure. Lets do it.
+    answerOption2: I can't wait!
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Thank you. Now go and open it up.
+    isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
     answerOption2: 
