@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 60862ebdd55e79344bbcd625e17c2c03, type: 3}
-  m_Name: Riximus
+  m_Script: {fileID: 11500000, guid: df30597d6fa94e8a978961ac8e4bb106, type: 3}
+  m_Name: Book
   m_EditorClassIdentifier: 
-  _roles:
-  - Programmer
-  _socialMediaLinks:
-  - https://github.com/Riximus
-  <CreditedName>k__BackingField: Riximus
+  <Kind>k__BackingField: 1
+  <Name>k__BackingField: Book
+  <Description>k__BackingField: Some kind of book from the library. The librarian
+    must be looking fo it.
+  <Icon>k__BackingField: {fileID: 0}

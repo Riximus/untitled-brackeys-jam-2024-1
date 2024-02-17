@@ -1,0 +1,8 @@
+#container {
+    flex-direction: row;
+}
+
+#item-name {
+    font-size: 14px;
+    -unity-font-style: bold;
+}

@@ -9,19 +9,10 @@ namespace Inventory
     /// Represents a fact as an item in the inventory.
     /// </summary>
     [CreateAssetMenu(menuName = "Inventory/Fact")]
-    public class Fact : ScriptableObject
+    public class Fact : Item
     {
-        [field: SerializeField, Tooltip("Short, descriptive name of this fact")]
-        public string Name { get; private set; }
-
-        [field: SerializeField, Tooltip("Full description of this fact")]
-        public string Description { get; private set; }
-    
         [field: SerializeField, Tooltip("A list of all facts that are required to unlock this fact; can be empty")]
         public Fact[] DependsOn { get; private set; }
-        
-        [field: SerializeField, Tooltip("Small icon that's displayed alongside this fact")]
-        public Texture Icon { get; private set; }
 
         private void OnValidate()
         {

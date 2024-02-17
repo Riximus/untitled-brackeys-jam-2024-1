@@ -139,10 +139,11 @@ namespace UI
 
         private void OnInventoryButtonClicked()
         {
-            if (_menuItemContainer == null || _inventorySubMenu == null)
+            if (_menuItemContainer == null || _inventorySubMenu == null || _inventorySubMenuHandler == null)
                 throw new InvalidOperationException(
                     $"{nameof(OnInventoryButtonClicked)} called before {nameof(OnEnable)}!");
             
+            _inventorySubMenuHandler.Open();
             _menuItemContainer.RemoveFromClassList("enabled");
             _menuItemContainer.AddToClassList("disabled");
             _inventorySubMenu.RemoveFromClassList("disabled");
