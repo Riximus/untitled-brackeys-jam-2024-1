@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60862ebdd55e79344bbcd625e17c2c03, type: 3}
   m_Name: Jona
   m_EditorClassIdentifier: 
-  _roles: []
-  _socialMediaLinks: []
-  <CreditedName>k__BackingField: Jona
+  _roles:
+  - Writer
+  - Composer
+  _socialMediaLinks:
+  - https://github.com/JonaMareque
+  <CreditedName>k__BackingField: Jona Mareque

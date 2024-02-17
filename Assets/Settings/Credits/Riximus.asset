@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60862ebdd55e79344bbcd625e17c2c03, type: 3}
   m_Name: Riximus
   m_EditorClassIdentifier: 
-  _roles: []
-  _socialMediaLinks: []
+  _roles:
+  - Programmer
+  _socialMediaLinks:
+  - https://github.com/Riximus
   <CreditedName>k__BackingField: Riximus
