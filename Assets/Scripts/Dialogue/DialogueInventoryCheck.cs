@@ -7,16 +7,16 @@ public class DialogueInventoryCheck : MonoBehaviour
 {
     [SerializeField] private InventoryHandler inventoryHandler;
     [SerializeField] private ItemKind requiredItem;
-    [SerializeField] private uint requiredNotesheetCount;
+    [SerializeField] private uint requiredItemCount;
     private DialogueTrigger _dialogueTrigger;
 
-    public void UpdateDialogIfNotesheetsWereFound()
+    public void UpdateDialogIfItemsWereFound()
     {
-        if (inventoryHandler.HasAmountOfItems(requiredItem, requiredNotesheetCount))
-        {
-            _dialogueTrigger.hasDialogueTriggered = true;
-            _dialogueTrigger.isLoopingDialogue = false;
-        }
+        if (!inventoryHandler.HasAmountOfItems(requiredItem, requiredItemCount))
+            return;
+        
+        _dialogueTrigger.hasDialogueTriggered = true;
+        _dialogueTrigger.isLoopingDialogue = false;
     }
 
     private void Awake()
