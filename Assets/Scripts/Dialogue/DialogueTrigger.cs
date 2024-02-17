@@ -10,6 +10,7 @@ namespace Dialogue
     public class DialogueTrigger : MonoBehaviour, IInteractable
     {
         [SerializeField] public bool hasDialogueTriggered = false;
+        [SerializeField] public bool isLoopingDialogue = false;
         [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
         [SerializeField] private Transform npcTransform;
         //[SerializeField] private GameObject player;
@@ -22,7 +23,10 @@ namespace Dialogue
                 if (player != null)
                 {
                     player.GetComponent<DialogueManager>().DialogueStart(dialogueStrings, npcTransform);
-                    hasDialogueTriggered = true;
+                    if (!isLoopingDialogue)
+                    {
+                        hasDialogueTriggered = true;
+                    }
                 }
             }
         }
@@ -46,6 +50,7 @@ namespace Dialogue
     public class DialogueString
     {
         public string indexReadOnly; // The index of the dialogue
+        [TextArea(3,3)]
         public string text; // The text to display what the NPC is saying
         public bool isEndOfDialogue; // Whether or not this is the end of the dialogue
         

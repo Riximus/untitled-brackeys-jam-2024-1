@@ -1126,7 +1126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueParent: {fileID: 292139281}
-  typingSpeed: 0.05
+  typingSpeed: 0.02
   turnSpeed: 2
   playerController: {fileID: 120213494}
   playerCamera: {fileID: 1053521871}
@@ -1501,6 +1501,374 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: c35f781f9b5875344b6ea7a3427df9e4, type: 3}
+--- !u!1 &458897973
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458897976}
+  - component: {fileID: 458897975}
+  - component: {fileID: 458897974}
+  - component: {fileID: 458897977}
+  m_Layer: 0
+  m_Name: MusicianDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &458897974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: 
+    text: Hey you. You look like you have nothing to do.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Question Start
+    text: Help me.
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: If I must...
+    answerOption2: How about no?
+    nextDialogue1: 2
+    nextDialogue2: 15
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Help them
+    text: Oh I'm glad. Tonight I have a show at the festival. It's important that
+      I'm ready because this village needs it.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: 'The community needs it. '
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Who knows what the future will bring if I'm not there to perform. To glue
+      this mess together.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Hear me out. I'm might be a messy person but I would never lose my music
+      sheets.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Never ever.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I have the suspicion that they got stolen or worse...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Destroyed ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Find them.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Find the culprit.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Quest Question if Player wants to help
+    text: Just get them back to me. Would you?
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: You did not say the magic word yet.
+    answerOption2: Do not worry! Will do.
+    nextDialogue1: 12
+    nextDialogue2: 14
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Hmm... Abra Kadabra? Pizza? Houdini?
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: End of Dialogue
+    text: I'm bad at this. Just go please. Don't waste my time with magic.
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: End of Dialogue 2
+    text: Thank you!
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Say No to helping them
+    text: Wow
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Play music (at the end)
+    text: Maybe if I play some tunes for you?
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - indexReadOnly: Question if they want to help now
+    text: Now?
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: Not bad. What's up?
+    answerOption2: No
+    nextDialogue1: 2
+    nextDialogue2: 16
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!65 &458897975
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &458897976
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -196.43, y: 5.8, z: 228.776}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &458897977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 1
+  dialogueStrings:
+  - indexReadOnly: Looping till quest done.
+    text: I can see that you that you are missing the music sheets.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
 --- !u!4 &508382653 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4333350046235020, guid: 0cfb7b9f82ba92f46947e6664d9831d5, type: 3}
@@ -2617,6 +2985,319 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4108780154187976, guid: 4f0de9221977946459f59d7a418d031c, type: 3}
   m_PrefabInstance: {fileID: 726786314}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1102431869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1102431871}
+  - component: {fileID: 1102431870}
+  - component: {fileID: 1102431873}
+  - component: {fileID: 1102431872}
+  m_Layer: 0
+  m_Name: LibrarianDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1102431870
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1102431871
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -193.401, y: 5.8, z: 228.776}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1102431872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 1
+  dialogueStrings:
+  - indexReadOnly: Looping till quest done
+    text: I do not see any books on you and I know that they are big enough to be
+      visible.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Looping till quest done
+    text: Come back when you found them all.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &1102431873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: 
+    text: Welcome in my library stranger.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I hope the door you might have seen in this town did not bother you.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: It is quite a stain in my honest opinion.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: It just takes away the scenery and when I remember what it once was ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: One day. Maybe one day again.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: One day. Maybe ... one day again.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Oh, I was lost in my thoughts again.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Quest Question
+    text: I need your time and eyes. Help me with my issue kind stranger.
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: Sure
+    answerOption2: You have eyes too.
+    nextDialogue1: 8
+    nextDialogue2: 12
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Thank you! I need you to find something for me.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Or multiple things.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Some library books never got returned and I need them back.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Please find them. Luckly there are not many places to go so they are surely
+      not far.
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Nice observation. Good to know that your eyes are healthy.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Sadly I do not have the time. I will ask you only this time. Please.
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: Your eyes are on your face.
+    answerOption2: Okay, only this time.
+    nextDialogue1: 12
+    nextDialogue2: 8
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
 --- !u!1 &1116828931 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1672147471839840, guid: 0616c9d1be2a091459a73cfb6ac35a49, type: 3}
@@ -3648,6 +4329,229 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1165856017115657521, guid: 3eb595c1bb6013c48ad66939bfad5d02, type: 3}
   m_PrefabInstance: {fileID: 5810997139006638130}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1530007735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1530007736}
+  - component: {fileID: 1530007739}
+  - component: {fileID: 1530007738}
+  - component: {fileID: 1530007737}
+  m_Layer: 0
+  m_Name: CubeDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1530007736
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530007735}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.51, y: 1.51, z: 1.51}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1863059562}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1530007737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530007735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: 
+    text: You are back?
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: Yes why do you care.
+    answerOption2: Why bother.
+    nextDialogue1: 1
+    nextDialogue2: 2
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Because you seem chill!
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Okay bother something else.
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 1530007736}
+--- !u!114 &1530007738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530007735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: 
+    text: Hello World
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: How are you?
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: I'm good
+    answerOption2: Stfu
+    nextDialogue1: 2
+    nextDialogue2: 3
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: 
+          m_MethodName: 
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: 
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Thats great!
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: WHAT??!!!
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: GET LOST BITCH
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 0}
+          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_MethodName: SetActive
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 1530007736}
+--- !u!65 &1530007739
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530007735}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1535852399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4072542193287820, guid: a4e41b0c9a53a264baaf84a6ad9be458, type: 3}
@@ -4380,8 +5284,6 @@ GameObject:
   - component: {fileID: 1863059561}
   - component: {fileID: 1863059560}
   - component: {fileID: 1863059559}
-  - component: {fileID: 1863059558}
-  - component: {fileID: 1863059557}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -4389,160 +5291,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1863059557
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863059556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasDialogueTriggered: 0
-  dialogueStrings:
-  - indexReadOnly: 
-    text: You are back?
-    isEndOfDialogue: 0
-    isQuestion: 1
-    answerOption1: Yes why do you care.
-    answerOption2: Why bother.
-    nextDialogue1: 1
-    nextDialogue2: 2
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - indexReadOnly: 
-    text: Because you seem chill!
-    isEndOfDialogue: 1
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    nextDialogue1: 0
-    nextDialogue2: 0
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - indexReadOnly: 
-    text: Okay bother something else.
-    isEndOfDialogue: 1
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    nextDialogue1: 0
-    nextDialogue2: 0
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  npcTransform: {fileID: 1863059562}
---- !u!114 &1863059558
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1863059556}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hasDialogueTriggered: 0
-  dialogueStrings:
-  - indexReadOnly: 
-    text: Hello World
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    nextDialogue1: 0
-    nextDialogue2: 0
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - indexReadOnly: 
-    text: How are you?
-    isEndOfDialogue: 0
-    isQuestion: 1
-    answerOption1: I'm good
-    answerOption2: Stfu
-    nextDialogue1: 2
-    nextDialogue2: 3
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - indexReadOnly: 
-    text: Thats great!
-    isEndOfDialogue: 1
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    nextDialogue1: 0
-    nextDialogue2: 0
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - indexReadOnly: 
-    text: WHAT??!!!
-    isEndOfDialogue: 0
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    nextDialogue1: 0
-    nextDialogue2: 0
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  - indexReadOnly: 
-    text: GET LOST BITCH
-    isEndOfDialogue: 1
-    isQuestion: 0
-    answerOption1: 
-    answerOption2: 
-    nextDialogue1: 0
-    nextDialogue2: 0
-    startDialogueEvent:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 0}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-    endDialogueEvent:
-      m_PersistentCalls:
-        m_Calls: []
-  npcTransform: {fileID: 1863059562}
 --- !u!65 &1863059559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4626,7 +5374,8 @@ Transform:
   m_LocalPosition: {x: -195.03, y: 5.8, z: 228.776}
   m_LocalScale: {x: 0.37, y: 0.37, z: 0.37}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1530007736}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1874222093
@@ -4761,6 +5510,373 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4188878019612106, guid: fa1fbed80c6345a4da5ccfbda3b22ac4, type: 3}
   m_PrefabInstance: {fileID: 1881011279}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1891934411
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1891934413}
+  - component: {fileID: 1891934412}
+  - component: {fileID: 1891934415}
+  - component: {fileID: 1891934414}
+  m_Layer: 0
+  m_Name: CarpenterDialogue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1891934412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891934411}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &1891934413
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891934411}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -200.17, y: 5.8, z: 228.776}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1891934414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891934411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 1
+  dialogueStrings:
+  - indexReadOnly: 
+    text: ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
+--- !u!114 &1891934415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891934411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasDialogueTriggered: 0
+  isLoopingDialogue: 0
+  dialogueStrings:
+  - indexReadOnly: Greeting and Question
+    text: Another pesky wanderer not minding their business.
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: What rude greeting
+    answerOption2: Hello "kind" sir
+    nextDialogue1: 1
+    nextDialogue2: 8
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Rude?
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Rude are the people talking behind my back and mocking me for what I did!
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I just wanted to show them a world where we ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: we ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: are a community again.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: But all I got are ungrateful faces.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Question about door locks
+    text: And those locks that prevent it.
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: You mean the door that is locked?
+    answerOption2: What is that door anyway.
+    nextDialogue1: 10
+    nextDialogue2: 10
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Answer to Index 0
+    text: Another one mocking me.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: Question to branch back to start
+    text: Who send you?! Go back to your hole and leave me be.
+    isEndOfDialogue: 0
+    isQuestion: 1
+    answerOption1: Are you okay?
+    answerOption2: You are so unnecessary rude to me.
+    nextDialogue1: 3
+    nextDialogue2: 1
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Why should you even care.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I guess you will not leave me in peace.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: You think you are the only one wondering?
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: It's not about what's behind the door.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: It's about why it's closed.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I can't and am not capable to tell you more.
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: Maybe one day when they understand that the door was build for them ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: then I might ... I might ...
+    isEndOfDialogue: 0
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  - indexReadOnly: 
+    text: I need some time alone to think. Bother the other villagers.
+    isEndOfDialogue: 1
+    isQuestion: 0
+    answerOption1: 
+    answerOption2: 
+    nextDialogue1: 0
+    nextDialogue2: 0
+    startDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+    endDialogueEvent:
+      m_PersistentCalls:
+        m_Calls: []
+  npcTransform: {fileID: 0}
 --- !u!1001 &1947486988
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5559,3 +6675,6 @@ SceneRoots:
   - {fileID: 292139283}
   - {fileID: 200187272}
   - {fileID: 120213498}
+  - {fileID: 458897976}
+  - {fileID: 1102431871}
+  - {fileID: 1891934413}
