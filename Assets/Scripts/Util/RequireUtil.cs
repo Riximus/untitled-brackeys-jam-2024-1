@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
-using Object = UnityEngine.Object;
 
 namespace Util
 {
@@ -12,33 +10,6 @@ namespace Util
     /// </summary>
     public static class RequireUtil
     {
-        /// <summary>
-        /// Gets the asset of type <typeparamref name="T"/> at the path specified by <paramref name="assetPath"/> or
-        /// throws an exception if the asset is missing.
-        /// </summary>
-        /// <param name="assetPath">the required asset's path</param>
-        /// <typeparam name="T">the type of the required asset</typeparam>
-        /// <returns>the required asset</returns>
-        /// <exception cref="ArgumentNullException">if <paramref name="assetPath"/> is <c>null</c></exception>
-        /// <exception cref="InvalidOperationException">
-        /// if there is no asset of type <typeparamref name="T"/> at the path specified by <paramref name="assetPath"/>
-        /// </exception>
-        /// <seealso cref="AssetDatabase.LoadAssetAtPath{T}"/>
-        [return: NotNull]
-        public static T RequireAsset<T>([DisallowNull] string assetPath)
-            where T : Object
-        {
-            if (assetPath == null)
-                throw new ArgumentNullException(nameof(assetPath));
-
-            var asset = AssetDatabase.LoadAssetAtPath<T>(assetPath);
-
-            if (asset == null)
-                throw new InvalidOperationException($"Missing required {typeof(T).Name} asset at {assetPath}!");
-
-            return asset;
-        }
-        
         /// <summary>
         /// Gets the component of type <typeparamref name="T"/> on <paramref name="monoBehaviour"/>'s
         /// <see cref="GameObject"/> or throws an exception if the component is missing.
