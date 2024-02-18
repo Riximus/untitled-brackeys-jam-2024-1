@@ -2064,6 +2064,7 @@ GameObject:
   - component: {fileID: 458897981}
   - component: {fileID: 458897983}
   - component: {fileID: 458897982}
+  - component: {fileID: 458897984}
   m_Layer: 0
   m_Name: MusicianDialogue
   m_TagString: Untagged
@@ -2792,7 +2793,19 @@ MonoBehaviour:
         m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 458897984}
+          m_TargetAssemblyTypeName: Dialogue.MoveNPC, Assembly-CSharp
+          m_MethodName: MoveMusician
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   npcTransform: {fileID: 0}
 --- !u!114 &458897981
 MonoBehaviour:
@@ -2836,6 +2849,19 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 2
   requiredItemCount: 2
+--- !u!114 &458897984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458897973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a1b8745ff94ad8a82316eeb00e2425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 2083181181}
 --- !u!1001 &474445294
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2846,7 +2872,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 10fc72e4acd448645b0c4935615251ef, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -222.46468
+      value: -222.464
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10fc72e4acd448645b0c4935615251ef, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2854,7 +2880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10fc72e4acd448645b0c4935615251ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 234.11633
+      value: 234.116
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 10fc72e4acd448645b0c4935615251ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4837,6 +4863,7 @@ GameObject:
   - component: {fileID: 1102431877}
   - component: {fileID: 1102431879}
   - component: {fileID: 1102431878}
+  - component: {fileID: 1102431880}
   m_Layer: 0
   m_Name: LibrarianDialogue
   m_TagString: Untagged
@@ -5524,7 +5551,19 @@ MonoBehaviour:
         m_Calls: []
     endDialogueEvent:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 1102431880}
+          m_TargetAssemblyTypeName: Dialogue.MoveLibrarianToCarpenter, Assembly-CSharp
+          m_MethodName: MoveLibrarian
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   npcTransform: {fileID: 0}
 --- !u!114 &1102431876
 MonoBehaviour:
@@ -5610,6 +5649,19 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 2
   requiredItemCount: 2
+--- !u!114 &1102431880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1102431869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51a1b8745ff94ad8a82316eeb00e2425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc: {fileID: 474445295}
 --- !u!1 &1116828931 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1672147471839840, guid: 0616c9d1be2a091459a73cfb6ac35a49, type: 3}
