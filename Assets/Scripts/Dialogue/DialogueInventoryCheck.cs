@@ -8,12 +8,15 @@ public class DialogueInventoryCheck : MonoBehaviour
     [SerializeField] private InventoryHandler inventoryHandler;
     [SerializeField] private ItemKind requiredItem;
     [SerializeField] private uint requiredItemCount;
+    [SerializeField] private string dialogueName;
     private static int _villagersCalled = 0;
     private DialogueTrigger _dialogueTrigger;
 
     public void UpdateDialogIfItemsWereFound()
     {
-        if (!inventoryHandler.HasAmountOfItems(requiredItem, requiredItemCount))
+        if (_dialogueTrigger == null
+            || inventoryHandler == null
+            || !inventoryHandler.HasAmountOfItems(requiredItem, requiredItemCount))
             return;
         
         if (requiredItem == ItemKind.MagicFlower)
@@ -35,6 +38,6 @@ public class DialogueInventoryCheck : MonoBehaviour
     {
         var dialogueTriggers = GetComponents<DialogueTrigger>();
         _dialogueTrigger = dialogueTriggers.FirstOrDefault(
-            dialogueTrigger => dialogueTrigger.GetDialogueStrings().Length == 1);
+            dialogueTrigger => dialogueTrigger.DialogueName == dialogueName);
     }
 }
