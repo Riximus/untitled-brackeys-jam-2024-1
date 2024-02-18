@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Input;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Dialogue
 {
     public class DialogueTrigger : MonoBehaviour, IInteractable
     {
+        [SerializeField] private string dialogName;
         [SerializeField] public bool hasDialogueTriggered = false;
         [SerializeField] public bool isLoopingDialogue = false;
         [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
         [SerializeField] private Transform npcTransform;
-        //[SerializeField] private GameObject player;
 
+        public string DialogueName => dialogName;
+        
         /// <summary>
         /// Returns a copy of the dialogue string list.
         /// </summary>
