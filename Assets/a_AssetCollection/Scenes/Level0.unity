@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657528, g: 0.49641114, b: 0.57481605, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657558, g: 0.49641156, b: 0.5748166, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -1027,6 +1027,7 @@ MonoBehaviour:
   turnSpeed: 2
   playerController: {fileID: 120213494}
   playerCamera: {fileID: 1159454939}
+  playerInput: {fileID: 0}
 --- !u!114 &120213494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2054,6 +2055,7 @@ MonoBehaviour:
   turnSpeed: 2
   playerController: {fileID: 120213494}
   playerCamera: {fileID: 1053521871}
+  playerInput: {fileID: 359473989}
 --- !u!114 &359473987
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2849,7 +2851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogName: 
+  dialogName: looping-dialogue
   hasDialogueTriggered: 0
   isLoopingDialogue: 1
   dialogueStrings:
@@ -2892,7 +2894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogName: 
+  dialogName: looping-dialogue 2
   hasDialogueTriggered: 0
   isLoopingDialogue: 1
   dialogueStrings:
@@ -3272,7 +3274,7 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 0
   requiredItemCount: 3
-  dialogueName: 
+  dialogueName: looping-dialogue
 --- !u!114 &458897982
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3300,7 +3302,7 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 2
   requiredItemCount: 2
-  dialogueName: 
+  dialogueName: looping-dialogue 2
 --- !u!114 &458897984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5844,7 +5846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogName: 
+  dialogName: looping-dialogue
   hasDialogueTriggered: 0
   isLoopingDialogue: 1
   dialogueStrings:
@@ -6118,7 +6120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogName: 
   hasDialogueTriggered: 0
-  isLoopingDialogue: 1
+  isLoopingDialogue: 0
   dialogueStrings:
   - indexReadOnly: 
     text: Oh the books look heavier than I had in mind. I hope your back is not hurt.
@@ -6506,7 +6508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogName: 
+  dialogName: looping-dialogue 2
   hasDialogueTriggered: 0
   isLoopingDialogue: 1
   dialogueStrings:
@@ -6552,7 +6554,7 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 1
   requiredItemCount: 3
-  dialogueName: 
+  dialogueName: looping-dialogue
 --- !u!114 &1102431878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6580,7 +6582,7 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 2
   requiredItemCount: 2
-  dialogueName: 
+  dialogueName: looping-dialogue 2
 --- !u!114 &1102431880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10841,7 +10843,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 026647686e4844009c94c58c17917f22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogName: 
+  dialogName: looping-dialogue
   hasDialogueTriggered: 0
   isLoopingDialogue: 1
   dialogueStrings:
@@ -11435,7 +11437,7 @@ MonoBehaviour:
   inventoryHandler: {fileID: 359473993}
   requiredItem: 2
   requiredItemCount: 2
-  dialogueName: 
+  dialogueName: looping-dialogue
 --- !u!1001 &1904204441
 PrefabInstance:
   m_ObjectHideFlags: 0
