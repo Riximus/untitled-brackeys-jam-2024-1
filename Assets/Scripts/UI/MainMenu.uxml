@@ -7,7 +7,7 @@
                 <ui:VisualElement style="flex-grow: 1;">
                     <ui:Button text="Start Game" parse-escape-sequences="true" display-tooltip-when-elided="true" name="start-game-button" />
                 </ui:VisualElement>
-                <ui:VisualElement style="flex-grow: 1;">
+                <ui:VisualElement style="flex-grow: 1; display: none;">
                     <ui:Button text="Options" parse-escape-sequences="true" display-tooltip-when-elided="true" name="options-button" />
                 </ui:VisualElement>
                 <ui:VisualElement style="flex-grow: 1;">
