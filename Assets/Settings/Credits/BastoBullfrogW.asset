@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: BastoBullfrogW
   m_EditorClassIdentifier: 
   _roles:
-  - 3D Artist
+  - 3D Art
+  - Level Design
   _socialMediaLinks:
-  - https://github.com/BastoBullfrogW
+  - https://www.artstation.com/basto
   <CreditedName>k__BackingField: BastoBullfrogW
