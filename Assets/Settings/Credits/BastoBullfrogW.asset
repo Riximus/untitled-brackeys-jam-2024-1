@@ -12,6 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60862ebdd55e79344bbcd625e17c2c03, type: 3}
   m_Name: BastoBullfrogW
   m_EditorClassIdentifier: 
-  _roles: []
-  _socialMediaLinks: []
+  _roles:
+  - 3D Art
+  - Level Design
+  _socialMediaLinks:
+  - https://www.artstation.com/basto
   <CreditedName>k__BackingField: BastoBullfrogW

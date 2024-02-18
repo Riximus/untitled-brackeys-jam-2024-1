@@ -1,18 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Input;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Dialogue
 {
     public class DialogueTrigger : MonoBehaviour, IInteractable
     {
+        [SerializeField] private string dialogName;
         [SerializeField] public bool hasDialogueTriggered = false;
+        [SerializeField] public bool isLoopingDialogue = false;
         [SerializeField] private List<DialogueString> dialogueStrings = new List<DialogueString>();
         [SerializeField] private Transform npcTransform;
-        //[SerializeField] private GameObject player;
+
+        public string DialogueName => dialogName;
+        
+        /// <summary>
+        /// Returns a copy of the dialogue string list.
+        /// </summary>
+        /// <returns>a copy of the dialogue strings list with references to the correct dialogue strings</returns>
+        public DialogueString[] GetDialogueStrings()
+        {
+            return dialogueStrings.ToArray();
+        }
         
         private void StartDialogue()
         {
@@ -22,7 +32,10 @@ namespace Dialogue
                 if (player != null)
                 {
                     player.GetComponent<DialogueManager>().DialogueStart(dialogueStrings, npcTransform);
-                    hasDialogueTriggered = true;
+                    if (!isLoopingDialogue)
+                    {
+                        hasDialogueTriggered = true;
+                    }
                 }
             }
         }
@@ -46,6 +59,7 @@ namespace Dialogue
     public class DialogueString
     {
         public string indexReadOnly; // The index of the dialogue
+        [TextArea(3,3)]
         public string text; // The text to display what the NPC is saying
         public bool isEndOfDialogue; // Whether or not this is the end of the dialogue
         
