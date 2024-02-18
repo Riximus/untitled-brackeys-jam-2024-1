@@ -1,14 +1,15 @@
-﻿using UnityEngine;
+﻿using Input;
+using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class EndingTrigger : MonoBehaviour
+    public class EndingTrigger : MonoBehaviour, IInteractable
     {
         [SerializeField] private Transform carpenter;
         [SerializeField] private Transform musician;
         [SerializeField] private Transform librarian;
         
-        public void MoveAllVillagers()
+        public void Interact()
         {
             Vector3 rotation = new Vector3(0, -108.276f, 0);
             Vector3 librarianRotation = new Vector3(0, -118.032f, 0);
