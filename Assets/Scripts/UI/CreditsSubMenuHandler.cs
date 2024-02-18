@@ -59,7 +59,13 @@ namespace UI
                 var mentionContainer = new VisualElement();
                 mentionContainer.AddToClassList("mention-container");
                 var titleText = string.Join(", ", creditMention.Roles);
-                var creditedName = new Label(creditMention.CreditedName);
+                var creditedName = new Label(creditMention.CreditedName)
+                {
+                    style =
+                    {
+                        unityFontStyleAndWeight = new StyleEnum<FontStyle>(FontStyle.Bold)
+                    }
+                };
                 creditedName.AddToClassList("mention-name");
                 mentionContainer.Add(creditedName);
                 var title = new Label(titleText);
