@@ -9,6 +9,7 @@ public class DialogueInventoryCheck : MonoBehaviour
     [SerializeField] private ItemKind requiredItem;
     [SerializeField] private uint requiredItemCount;
     [SerializeField] private string dialogueName;
+    private static int _villagersCalled = 0;
     private DialogueTrigger _dialogueTrigger;
 
     public void UpdateDialogIfItemsWereFound()
@@ -18,6 +19,17 @@ public class DialogueInventoryCheck : MonoBehaviour
             || !inventoryHandler.HasAmountOfItems(requiredItem, requiredItemCount))
             return;
         
+        if (requiredItem == ItemKind.MagicFlower)
+            _villagersCalled++;
+        
+        _dialogueTrigger.hasDialogueTriggered = true;
+        _dialogueTrigger.isLoopingDialogue = false;
+    }
+
+    public void UpdateDialogIfVillagersCalled()
+    {
+        if (_villagersCalled < 2)
+            return;
         _dialogueTrigger.hasDialogueTriggered = true;
         _dialogueTrigger.isLoopingDialogue = false;
     }
