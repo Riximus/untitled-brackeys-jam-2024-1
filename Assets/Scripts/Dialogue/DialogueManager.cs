@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using Input;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Util;
 using Cursor = UnityEngine.Cursor;
@@ -20,6 +20,7 @@ namespace Dialogue
         [Header("Player")]
         [SerializeField] private PlayerController playerController; // TODO: Reference it differently
         [SerializeField] private Transform playerCamera; // TODO: Reference it differently
+        [SerializeField] private PlayerInput playerInput;
 
         private List<DialogueString> _dialogueList;
         private Transform _playerCamera;
@@ -36,16 +37,6 @@ namespace Dialogue
         private Button _option2Button;
         private Label _dialogueText;
 
-        private void Awake()
-        {
-            // We had to move stuff over to DialogueStart
-        }
-
-        private void OnEnable()
-        {
-            // We had to move stuff over to DialogueStart
-        }
-
         private void Start()
         {
             dialogueParent.SetActive(false);
@@ -58,6 +49,7 @@ namespace Dialogue
             
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
+            playerInput.enabled = false;
 
             StartCoroutine(TurnCameraTowardsNpc(npc));
             
@@ -203,6 +195,7 @@ namespace Dialogue
             
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
+            playerInput.enabled = true;
         }
     }
 }
