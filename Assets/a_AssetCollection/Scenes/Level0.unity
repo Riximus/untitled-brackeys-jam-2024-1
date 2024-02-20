@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657558, g: 0.49641156, b: 0.5748166, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657528, g: 0.49641114, b: 0.57481605, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &4
 LightmapSettings:
@@ -2693,7 +2693,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - indexReadOnly: Quest Question if Player wants to help
-    text: Just get them back to me. Would you?
+    text: Just get three notesheets back to me. Would you?
     isEndOfDialogue: 0
     isQuestion: 1
     answerOption1: You did not say the magic word yet.
@@ -6049,7 +6049,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   - indexReadOnly: 
-    text: Some library books never got returned and I need them back.
+    text: Two library books never got returned and I need them back.
     isEndOfDialogue: 0
     isQuestion: 0
     answerOption1: 
